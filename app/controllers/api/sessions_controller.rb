@@ -1,4 +1,4 @@
-class Api:SessionsController < Application Controller 
+class Api:SessionsController < ApplicationController 
 
 
     def destroy
