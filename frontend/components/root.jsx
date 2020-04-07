@@ -5,6 +5,7 @@ import App from './App'
 
 const Root = ({store}) =>(
     <Provider store={store}> 
+        <h1> Welcome to Last Call! If you enjoy Bud Light, this probably isnt the place for you</h1>
         <HashRouter>
             <App />
         </HashRouter>

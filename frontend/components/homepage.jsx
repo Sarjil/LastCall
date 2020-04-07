@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -9,8 +9,7 @@ class Homepage extends React.Component {
     render() {
         return (
             <>
-                <h1> Welcome to Last Call! If you enjoy Bud Light, this probably isnt the place for you</h1>
-                <Link to='/signup'> Sign Up!! </Link>
+             <Link to='/signup'> Sign Up!! </Link>                 
             </>
         )
     }

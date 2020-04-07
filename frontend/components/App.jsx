@@ -7,10 +7,10 @@ import Greeting from './session/greeting/greeting'
 
 const App = () =>(
     <div>
-        <Homepage />
+        {/* <Homepage /> */}
         {/* <Greeting /> */}
         <Route path='/signup' component={SignUpContainer} />
-        {/* <Route path='/' component={GreetingContainer} /> */}
+        <Route path='/' component={Homepage} />
 
     </div>
 );

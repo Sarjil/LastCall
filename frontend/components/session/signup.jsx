@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Redirect } from 'react-router-dom'
 
 class SignUp extends React.Component{
     constructor(props){
@@ -21,6 +22,7 @@ class SignUp extends React.Component{
             <>
 
             <h3>Sign Up!</h3>
+            <Link to='/'> Back Home!! </Link>
 
             <form onSubmit={this.handleSubmit}>
 
