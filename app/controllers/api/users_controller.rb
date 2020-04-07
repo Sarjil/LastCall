@@ -1,27 +1,19 @@
 class Api::UsersController < ApplicationController
-
-    def new
-        @user = User.new
-        render :new
-    end 
     
-    def create
+    def create 
         @user = User.new(user_params)
-
-        if @user.save 
+        debugger
+        if @user.save
             login!(@user)
-            render json: "Successfully Created User"
+            # render :show
         else
-            flash.now[:errors] = @user.errors.full_messages status: 404
-            render :new
-        end 
-
-
+            render json: @user.errors.full_messages, status: 404
+        end
     end 
 
     private 
     def user_params
-        params.require(:user).permit(:username,:password)
+        params.require(:user).permit(:username,:password, :email)
     end
     
 end
