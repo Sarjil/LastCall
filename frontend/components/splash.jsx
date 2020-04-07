@@ -9,7 +9,7 @@ class Splash extends React.Component {
     render() {
         return (
             <>
-             <h1> LAST CALL! {this.props.user} wolololo</h1>
+             <h1> LAST CALL! {this.props.user}</h1>
              <p> Drink Socially </p>
              <p>Discover and Share Your Favorite Beer</p>
              
