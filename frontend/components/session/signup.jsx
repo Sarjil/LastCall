@@ -14,14 +14,14 @@ class SignUp extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.createUser(this.state);
+        this.props.signup(this.state);
     }
 
     render(){
         return(
             <>
 
-            <h3>Sign Up!</h3>
+            <h3>Sign Up Here!</h3>
             <Link to='/'> Back Home!! </Link>
 
             <form onSubmit={this.handleSubmit}>

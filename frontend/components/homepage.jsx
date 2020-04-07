@@ -9,7 +9,9 @@ class Homepage extends React.Component {
     render() {
         return (
             <>
-             <Link to='/signup'> Sign Up!! </Link>                 
+             <Link to='/signup'> Sign Up!! </Link>   
+             <Link to='/signin'> Sign In!! </Link>   
+                           
             </>
         )
     }
