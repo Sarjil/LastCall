@@ -1,0 +1,148 @@
+.session-form-cont{
+    width: 400px;
+    height: fit-content;
+    margin: auto;
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    padding: 16px 16px
+}
+
+// .session-form{
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-evenly;
+// }
+
+.session-div{
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.user-input{
+    border: none;
+    margin: 5px 5px 5px 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    width: 90%;
+}
+
+.session-title {
+    color: #3E4040;
+    font-size: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Arvo', serif;
+}
+
+.title-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.session-subtitle {
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    color: gray;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.session-btn {
+    background-color: #FFCC00;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    display: block;
+    padding: 12px 0;
+    color: white;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.session-btn:hover {
+    background-color: #F4B702;
+}
+
+.input-picture-user {
+    display: flex;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    margin: 8px;
+    padding-right: 5px;
+    border-right: #ddd solid 1px;
+}
+
+.input-img {
+    padding-top: 5px;
+    width: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.session-username {
+    background-image: image_url("person.png");
+}
+
+.session-pw {
+    background-image: image_url("lock.png");
+}
+
+.session-email {
+    background-image: image_url("email.png");
+}
+
+.or {
+    margin: 10px auto;
+    text-transform: uppercase;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    border-radius: 18px;
+    padding-top: 8px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    color: #ddd;
+    border: 3px solid #ddd;
+}   
+
+.demo-login-btn {
+    background-color:gray;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    display: block;
+    padding: 12px 0;
+    color: white;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.demo-login-btn:hover {
+    background-color:lightgray;
+    color: #fff;
+}

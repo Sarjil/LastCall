@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 class Main extends React.Component{
     constructor(props){
@@ -11,7 +12,8 @@ class Main extends React.Component{
         return(
             <div>
                 <h1> Welcome {user.username}, to Last Call </h1>
-                <button type="submit" onClick={logout}>Log Out</button>
+                <button className="logout-account" type="submit" onClick={logout}>Log Out</button>
+                
             </div>
         )
     }
