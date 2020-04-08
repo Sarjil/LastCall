@@ -1,16 +1,17 @@
-import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER} from "../actions/sessions/session_actions";
+import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER} from '../actions/session_actions'
 
-export const sessionReducer = (oldState = null, action) => {
-    Object.freeze(oldState);
-
-    switch(action.type){
+const sessionReducer = (state = {}, action) => {
+    Object.freeze(state);
+    switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            return {currentUserId: action.user.id}
+            return Object.assign({}, { currentUserId: action.currentUser.id })
         case LOGOUT_CURRENT_USER:
-            return {currentUserId: null}
+            return {currentUserId: null};
         default:
-            return oldState;
+            return state;
     }
+
+
 }
 
 export default sessionReducer; 

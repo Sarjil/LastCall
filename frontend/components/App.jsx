@@ -1,19 +1,16 @@
 import React from 'react';
 import SignUpContainer from './session/signup_container'
-import Splash from './splash'
+import HomePageContainer from './homepage/homepage_container'
 import {Route} from 'react-router-dom'
-import GreetingContainer from './greeting/greeting_container';
-import Greeting from './greeting/greeting'
 import SignInContainer from './session/signin_container'
-import {AuthRoute} from '../util/route_util'
+import {AuthRoute, ProtectedRoute} from '../util/route_util'
 
 const App = () =>(
-    <div>
-        {/* <Splash /> */}
-        {/* <Greeting /> */}
-        <Route path='/signup' component={SignUpContainer} />
-        <Route path='/' component={Splash} />
-        <Route path='/signin' component={SignInContainer} />
+    <div className = "main-bg">
+        
+        <Route path = '/' component={HomePageContainer} />
+        <AuthRoute path='/signin' component={SignInContainer} />
+        <AuthRoute path='/signup' component={SignUpContainer} />
 
     </div>
 );

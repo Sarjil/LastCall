@@ -1,10 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Nav from '../nav/nav'
 
-class SignIn extends React.Component{
+class SessionForm extends React.Component{
     constructor(props){
         super(props);
-        this.state = {username: '', password: ''}
+        this.state = {username: '', password: '', email:''}
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -14,30 +15,47 @@ class SignIn extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state);
+        this.props.processForm(this.state);
     }
 
     render(){
         
+        let header = '';
+        let link = null;
+
+        if(this.props.formType === 'Sign In'){
+            header = <h1> Welcome Back</h1>
+       
+        }else{
+            header = <h1>Welcome to Last Call!</h1>
+        }
                 
             return(
                 
                 
                 <>
-                    <h3>Sign In Here!</h3>
-                    <Link to='/'> Back Home!! </Link>
+                    <div>
+                        <Nav/>
+                    </div>
 
                     <form onSubmit={this.handleSubmit}>
+                        {header}
 
                     <label> Username 
                         <input type="text" value={this.state.username} onChange={this.update('username')} />
                     </label>
+                    <br/>
+                    <label> Email 
+                        <input type="text" value={this.state.email} onChange={this.update('email')} />
+                    </label>
+                    <br/>
                     <label> Password
                         <input type="password" value={this.state.password} onChange={this.update('password')} />
                     </label>
+                    <br/> 
                     
-                    <button type="submit"> Sign In</button>
-
+                    <button type="submit"> {this.props.formType} </button>
+                    
                     </form>
 
                 </>
@@ -49,4 +67,4 @@ class SignIn extends React.Component{
 
 }
 
-export default SignIn; 
+export default SessionForm; 
