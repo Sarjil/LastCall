@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import Nav from '../nav/nav'
 
-const demo_user = {username: 'DemoUser', password:'password'}
+const demo_user = {username: 'BeerLover', password:'password'}
 
 class SessionForm extends React.Component{
     constructor(props){
