@@ -22,6 +22,7 @@ class SessionForm extends React.Component{
     }
 
     handleDemoUser(e){
+        e.preventDefault(); 
         this.props.login(demo_user)
     }
 

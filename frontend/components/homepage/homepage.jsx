@@ -11,8 +11,8 @@ class Homepage extends React.Component {
         return (
             <div className="homepage-cont">  
                  <div className="homepage-links">
-                    <Link className="signup account" to='/signin'> Sign In!! </Link> 
-                    <Link className="signin account" to='/signup'> Create An Account!</Link>
+                    <Link className="signup account" to='/signin'> Sign In </Link> 
+                    <Link className="signin account" to='/signup'> Create An Account</Link>
                 </div>
                 
                 <img className="masthead-img" src={window.mastheadUrl} />
