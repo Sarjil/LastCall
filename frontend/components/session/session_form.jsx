@@ -21,13 +21,17 @@ class SessionForm extends React.Component{
     render(){
         
         let header = '';
-        let link = null;
+        let emailLink = null;
 
         if(this.props.formType === 'Sign In'){
             header = <h1> Welcome Back</h1>
-       
+            
         }else{
             header = <h1>Welcome to Last Call!</h1>
+            emailLink = <label> Email
+                        <input type="text" value={this.state.email} onChange={this.update('email')} />
+                        </label>
+                
         }
                 
             return(
@@ -45,10 +49,8 @@ class SessionForm extends React.Component{
                         <input type="text" value={this.state.username} onChange={this.update('username')} />
                     </label>
                     <br/>
-                    <label> Email 
-                        <input type="text" value={this.state.email} onChange={this.update('email')} />
-                    </label>
-                    <br/>
+                    {emailLink}
+                    <br/> 
                     <label> Password
                         <input type="password" value={this.state.password} onChange={this.update('password')} />
                     </label>
