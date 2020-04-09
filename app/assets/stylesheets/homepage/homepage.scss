@@ -57,38 +57,51 @@
     // bottom: 50px;
 }
 
-.homepage-text{
+
+.masthead-img{
+    display: flex;
     position: relative;
-    display: block;
-    text-align: center;
+    max-width: 30%;
+    // left: 960px;
+    // top: 46px; 
+    // margin-bottom: 56px;
+    
+}
+
+.lastcall-logo{
+    position: relative;
+    display: flex;
+    // justify-content: center;
+    height: 355px;
+    max-width: 20%;
+    bottom: 20px;
+    left: 120px;
+}
+
+.homepage-imgs{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.homepage-text{
+    display: inline-block;
+    position: relative;
+    align-items: center;
+    // text-align: center;
     margin-right: 20px;
     box-sizing: border-box;
     color: white;
     font-size: 50;
     font-weight: 700;
     font-family: ProximaNova, Arial, Helvetica, sans-serif;
-    bottom: 375px;
-    right: 285px;
+    bottom: 325px;
+    left: 23%;
 }
-
-.masthead-img{
-    position: relative;
-    left: 960px;
-    top: 46px; 
-    max-width: 30%;
-    margin-bottom: 56px;
- 
-}
-
-.lastcall-logo{
-    position: relative;
-    max-width: 17%;
-    bottom: 297px;
-    right: 90px;
-}
-
 
 .home-h1-second{
     position: relative;
+    display: flex;    
+    justify-content: center;
     bottom: 20px;
 }
