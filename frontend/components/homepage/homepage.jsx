@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom'
-import Nav from '../nav/nav'
+import Search from './search'
+import Map from './map'
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -30,8 +31,8 @@ class Homepage extends React.Component {
 
                 </div>
 
-                
-          
+                <Search />
+                <Map />
 
             </div>
         )

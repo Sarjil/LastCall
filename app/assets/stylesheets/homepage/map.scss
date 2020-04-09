@@ -1,0 +1,53 @@
+.nycmap{
+    background: image_url("nyc_map.png");
+    padding-top: 60px;
+    // opacity: 10%;
+    // background: linear-gradient(rgba(251,251,251,.7), #fbfbfb 80%),url("nyc_map.png");
+    // background-image: linear-gradient(rgba(251,251,251,0.7), rgb(251,251,251) 80%), url("nyc_map.png");
+}
+
+.phone-map{
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    background-image: image_url("phone-map.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 534px;
+    margin: 8px;
+    padding-right: 5px;
+    right: -450px;
+      
+}
+
+.short-rule{
+    background: #ffc000;
+    height: 4px;
+    margin: 30px 0;
+    width: 50px;
+}
+
+.explore-bars-h2{
+    line-height: 1em;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.phone-map-table{
+    display: table;
+    float: none!important;
+    box-sizing: inherit;
+    justify-content: center;
+}
+
+.explore-bars{
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+    margin-top: -40px;
+}
+
+.explore-bars-p{
+    font-size: 20.8x;
+}

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import Main from './main'
+import Feed from './feed'
 import {logout} from '../../actions/session_actions'
 
 const msp = state => ({
@@ -10,4 +10,4 @@ const mdp = dispatch => ({
     logout: () => dispatch(logout())
 })
 
-export default connect(msp,mdp)(Main);
+export default connect(msp,mdp)(Feed);

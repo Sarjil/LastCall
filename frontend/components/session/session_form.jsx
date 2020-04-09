@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Nav from '../nav/nav'
+import Nav from '../header/header'
 
 const demo_user = {username: 'BeerLover', password:'password'}
 
@@ -68,9 +68,7 @@ class SessionForm extends React.Component{
 
                     <div className="session-form session-div">
 
-                            <div className="input-picture-user session-username">
-                                {/* <p className="input-img"></p> */}
-                            </div> 
+                            <div className="input-picture-user session-username"></div> 
 
                          <input className="user-input" 
                                 type="text" 
@@ -84,9 +82,7 @@ class SessionForm extends React.Component{
 
                     <div className="session-form session-div">
 
-                        <div className="input-picture-user session-pw">
-                            {/* <p className="input-img"></p> */}
-                        </div>
+                        <div className="input-picture-user session-pw"></div>
 
                         <input className="user-input" 
                                type="password" 

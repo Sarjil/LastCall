@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import Header from '../header/header'
 
-class Main extends React.Component{
+class Feed extends React.Component{
     constructor(props){
         super(props);
     }
@@ -11,12 +12,10 @@ class Main extends React.Component{
 
         return(
             <div>
-                <h1> Welcome {user.username}, to Last Call </h1>
-                <button className="logout-account" type="submit" onClick={logout}>Log Out</button>
-                
+                <Header user={user} logout={logout}/>
             </div>
         )
     }
 }
 
-export default Main; 
+export default Feed; 

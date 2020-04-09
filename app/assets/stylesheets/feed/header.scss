@@ -1,0 +1,115 @@
+.feed-main-header{
+    display: flex;
+    position: relative;
+    background-color: #ffcc00;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.nav-bar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 0 12px;
+    height: 52px;
+}
+
+.header-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 18px;
+    width: 60%;
+    text-decoration: none;
+}
+
+.header-title-div {
+    // padding-top: 5px;
+}
+
+.header-title-div-link {
+    font-size: 30px;
+    margin-bottom: 3px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.header-link{
+    text-decoration: none;
+    color: inherit; 
+    font-family: serif;
+}
+
+.header-sub {
+    text-align: center;
+    font-size: 8px;
+    padding-bottom: 19px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.logout-header{
+    top: -20px;
+}
+
+.profile-pic {
+    height: 44px;
+    position: relative;
+    /* right: 264px; */
+    top: 6px;
+}
+
+.user-pic {
+    background-image: image_url("favicon.png");
+    width: 36px;
+    height: 36px;
+    -webkit-border-radius: 18px;
+    border-radius: 18px;
+    overflow: hidden;
+    bottom: 8px;
+}
+
+.header-dropdown {
+    background-color: #2c2c2c;
+    display: none;
+    color: #FFFFFF;
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    z-index: 12;
+    min-width: 125px;
+    width: fit-content;
+}
+
+.header-dropdown > li {
+    cursor: pointer;
+    padding: 12px;
+    border-bottom: #444444 solid 1px;
+    top: 80px;
+}
+
+.profile-pic:hover .header-dropdown {
+    display: block;
+}
+
+.profile-pic:hover .dropdown-arrow {
+    display: block;
+}
+
+.dropdown-arrow {
+    bottom: 100%;
+    left: 12px;
+    display: none;
+    top: 33px;
+    border: solid transparent;
+    z-index: 20;
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(44, 44, 44, 0);
+    border-bottom-color: #2c2c2c;
+    border-width: 6px;
+}
