@@ -9,23 +9,29 @@ class Homepage extends React.Component {
 
     render() {
         return (
+            <div className="homepage-cont">
 
-            <div className="homepage-cont">  
+                <div className="homepage-first-sect">  
 
-                 <div className="homepage-links">
-                    <Link className="signup account" to='/signin'> Sign In </Link> 
-                    <Link className="signin account" to='/signup'> Create An Account</Link>
+                    <div className="homepage-links">
+                        <Link className="signup account" to='/signin'> Sign In </Link> 
+                        <Link className="signin account" to='/signup'> Create An Account</Link>
+                    </div>
+                
+                    <div className="homepage-imgs"> 
+                        <img className ="lastcall-logo" src={window.lastcalllogo}/>
+                        <img className="masthead-img" src={window.mastheadUrl} />
+                    </div>
+
+                    <div className="homepage-text">
+                        <h1 className="home-h1-first" >Discover and share your</h1> 
+                        <h1 className="home-h1-second" >favorite beer</h1>
+                    </div>
+
                 </div>
-            
-            <div className="homepage-imgs"> 
-                <img className ="lastcall-logo" src={window.lastcalllogo}/>
-                <img className="masthead-img" src={window.mastheadUrl} />
-            </div>
 
-                <div className="homepage-text">
-                    <h1 className="home-h1-first" >Discover and share your</h1> 
-                    <h1 className="home-h1-second" >favorite beer</h1>
-                </div>
+                
+          
 
             </div>
         )

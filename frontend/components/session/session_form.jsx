@@ -69,7 +69,7 @@ class SessionForm extends React.Component{
                     <div className="session-form session-div">
 
                             <div className="input-picture-user session-username">
-                                <p className="input-img"></p>
+                                {/* <p className="input-img"></p> */}
                             </div> 
 
                          <input className="user-input" 
@@ -85,7 +85,7 @@ class SessionForm extends React.Component{
                     <div className="session-form session-div">
 
                         <div className="input-picture-user session-pw">
-                            <p className="input-img"></p>
+                            {/* <p className="input-img"></p> */}
                         </div>
 
                         <input className="user-input" 
