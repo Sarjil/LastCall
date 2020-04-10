@@ -9,4 +9,6 @@
 #  updated_at :datetime         not null
 #
 class Brewery < ApplicationRecord
+    validates :name, presence: true
+    validates :location, presence: true 
 end

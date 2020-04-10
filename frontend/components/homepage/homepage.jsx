@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import Search from './search'
 import Map from './map'
+import Features from './features'
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class Homepage extends React.Component {
 
                 <Search />
                 <Map />
-
+                <Features />
             </div>
         )
     }
