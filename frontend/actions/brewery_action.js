@@ -14,9 +14,9 @@ const receiveBreweries = breweries => ({
 })
 
 export const fetchBrewery = breweryId => dispatch => (
-    BreweryUtil.fetchBrewery(breweryId).then(brewery => dispatch(fetchBrewery(brewery)))
+    BreweryUtil.fetchBrewery(breweryId).then(brewery => dispatch(receiveBrewery(brewery)))
 )
 
 export const fetchBreweries = () => dispatch => (
-    BreweryUtil.fetchBreweries().then(breweries => dispatch(fetchBreweries(breweries)))
+    BreweryUtil.fetchBreweries().then(breweries => dispatch(receiveBreweries(breweries)))
 )

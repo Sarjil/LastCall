@@ -37,7 +37,7 @@ const Header = props => {
                 <img className="user-pic div" src={"https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v246-nunoon-35-icon_2.jpg?w=800&dpr=1&fit=default&crop=default&auto=format&fm=pjpg&q=75&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=f7f3e2bf8d881764ad350608b51a50e4"} />
                 <div className="dropdown-arrow"></div>
                 <ul className="header-dropdown">
-                    <li onClick={props.logout}> LOG OUT</li>
+                    <li onClick={props.logout}> Logout</li>
                 </ul>
             </div>
              
