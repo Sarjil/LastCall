@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import BreweryShow from './brewery_show';
+import BreweryShow from './breweries_show';
 import {fetchBrewery} from '../../actions/brewery_action'
 import {withRouter} from 'react-router-dom'
 

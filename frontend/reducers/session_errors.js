@@ -7,6 +7,8 @@ const sessionErrors = (state = [], action) => {
             return [];
         case DELETE_SESSION_ERRORS:
             return [];
+        case RECEIVE_SESSION_ERRORS:
+            return action.errors; 
         default:
             return state;
     }

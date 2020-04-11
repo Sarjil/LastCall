@@ -1,7 +1,6 @@
 import {connect} from 'react-redux'
 import Homepage from './homepage'
 import {login} from '../../actions/session_actions'
-
 const msp = state => ({
     
 })

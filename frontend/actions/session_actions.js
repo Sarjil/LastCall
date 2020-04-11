@@ -5,16 +5,16 @@ export const DELETE_SESSION_ERRORS = "DELETE_SESSION_ERRORS"
 
 import * as SessionApiUtil from '../util/session_api_util'
 
-const receiveCurrentUser = (currentUser) => ({
+export const receiveCurrentUser = (currentUser) => ({
     type: RECEIVE_CURRENT_USER,
     currentUser
 })
 
-const logoutCurrentUser = () => ({
+export const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER
 })
 
-const receiveSessionErrors = (errors) => ({ //errors is an array
+export const receiveSessionErrors = (errors) => ({ 
     type: RECEIVE_SESSION_ERRORS,
     errors
 })

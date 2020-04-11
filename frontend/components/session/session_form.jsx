@@ -12,6 +12,10 @@ class SessionForm extends React.Component{
         this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
+    componentWillUnmount(){
+        this.props.deleteSessionErrors(); 
+    }
+
     update(field) {
         return e => { this.setState({ [field]: e.target.value }) }
     }
@@ -28,20 +32,20 @@ class SessionForm extends React.Component{
 
     render(){
         
-        let header = '';
         let emailLink = null;
         let demo = null;
+        let switchForms = null;
 
         if(this.props.formType === 'Sign In'){
-            header = <h2> Welcome Back! Please Sign In Below</h2>
-            demo = <div>
+            demo = <div className="or-demo">
                      <div className="or">or</div>
                     <button className="demo-login-btn" onClick={this.handleDemoUser}>Demo User</button>
                      </div>
-        }else{
-            header = <h3>Sign Up to Last Call!</h3>
+            switchForms = <p className="session-bottom">New around here?<Link to="/signup" className="orange-link spacer-class">Sign Up!</Link></p>
+            }else{
+            switchForms = <p className="session-bottom">Already have an account?<Link to="/signin" className="orange-link spacer-class">Log In!</Link></p>
             emailLink = <div className="session-form session-div">
-                        
+                            <div className="session-user">
                             <div className="input-picture-user session-email">
                                 <p className="input-img"></p>
                             </div>
@@ -51,10 +55,17 @@ class SessionForm extends React.Component{
                                value={this.state.email} 
                                placeholder="E-Mail"
                                onChange={this.update('email')} />
+                            
+                            </div>  
+
                         </div>
                 
-        }
-                
+       }
+            const errors = this.props.errors;
+            const showError = Boolean(errors) && errors.length > 0 ? "show-error" : ""; 
+            const showErrors = errors.map(error => {
+                return <li key={error} className="error-li">{error}</li>
+            })             
             return(
                 
                 
@@ -64,17 +75,19 @@ class SessionForm extends React.Component{
 
                       <h2 className="session-title"><Link className="title-link" to="/">LAST CALL</Link></h2>
                       <h4 className="session-subtitle">DRINK SOCIALLY</h4>
-                       {/* {header} */}
+                      <ul className={`errors-list ${showError}`}> {showErrors} </ul>
 
                     <div className="session-form session-div">
 
-                            <div className="input-picture-user session-username"></div> 
-
-                         <input className="user-input" 
+                            <div className="session-user">
+                                <div className="input-picture-user session-username"></div> 
+                                 <input className="user-input" 
                                 type="text" 
-                                value={this.state.username}
-                                placeholder="Username" 
-                                onChange={this.update('username')} />
+                                    value={this.state.username}
+                                    placeholder="Username" 
+                                    onChange={this.update('username')} />
+
+                            </div>
                     </div>
                     
 
@@ -82,18 +95,21 @@ class SessionForm extends React.Component{
 
                     <div className="session-form session-div">
 
-                        <div className="input-picture-user session-pw"></div>
-
-                        <input className="user-input" 
-                               type="password" 
-                               value={this.state.password}
-                               placeholder="Password" 
-                               onChange={this.update('password')} />
+                        <div className="session-user"> 
+                            <div className="input-picture-user session-pw"></div>
+                            <input className="user-input" 
+                                type="password" 
+                                value={this.state.password}
+                                placeholder="Password" 
+                                onChange={this.update('password')} />
+                        
+                        </div>
                     </div>   
                    
                     
                     <button className="session-btn" type="submit"> {this.props.formType} </button>
-                    {demo} 
+                    {demo}
+                    {switchForms} 
                     </form>
 
                 </div>

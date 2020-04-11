@@ -9,11 +9,11 @@
     padding: 16px 16px
 }
 
-// .session-form{
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-evenly;
-// }
+.session-user{
+    display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-evenly;
+}
 
 .session-div{
     margin-bottom: 10px;
@@ -118,13 +118,15 @@
     text-align: center;
     border-radius: 18px;
     padding-top: 8px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-size: 0.8em;
     color: #ddd;
     border: 3px solid #ddd;
 }   
+
+.or-demo{
+    margin-top: -20px;
+}
 
 .demo-login-btn {
     background-color:gray;
@@ -145,4 +147,53 @@
 .demo-login-btn:hover {
     background-color:lightgray;
     color: #fff;
+}
+
+.session-bottom {
+    margin-top: 40px;
+    border-top: #ddd solid 1px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    padding-top: 30px;
+    font-weight: 600;
+}
+
+.orange-link {
+    font-family: sans-serif;
+    color: #CC6600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.orange-link:hover {
+    color: #FF9932;
+}
+
+.spacer-class{
+    margin-left: 10px; 
+}
+
+.errors-list {
+    background-color: #E25858;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px;
+    line-height: normal;
+    display: none;
+}
+
+.error-li {
+    color: white;
+}
+
+.show-error{
+    display: block;
+}
+
+ul{
+    list-style: none;
 }
