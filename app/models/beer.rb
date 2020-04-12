@@ -20,7 +20,7 @@ class Beer < ApplicationRecord
     after_initialize :ensure_default_photo
 
   def ensure_default_photo
-    self.photo.attach(io: File.open('app/assets/images/beericon.png'), filename: 'beericon.png', content_type: 'image/png') unless self.photo.attached?
+    self.photo.attach(io: File.open('app/assets/images/favicon.png'), filename: 'favicon.png', content_type: 'image/png') unless self.photo.attached?
   end
 
 end

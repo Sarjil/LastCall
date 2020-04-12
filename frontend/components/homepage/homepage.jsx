@@ -25,16 +25,19 @@ class Homepage extends React.Component {
                         <img className="masthead-img" src={window.mastheadUrl} />
                     </div>
 
-                    <div className="homepage-text">
+                    {/* <div className="homepage-text">
                         <h1 className="home-h1-first" >Discover and share your</h1> 
                         <h1 className="home-h1-second" >favorite beer</h1>
-                    </div>
+                    </div> */}
 
                 </div>
 
-                <Search />
-                <Map />
-                <Features />
+                <div className="homepage-second-sect"> 
+                    <Search className="home-search-container"/>
+                    <Map className="home-map-container"/>
+                    <Features className="home-features-container"/>
+                </div>
+
             </div>
         )
     }

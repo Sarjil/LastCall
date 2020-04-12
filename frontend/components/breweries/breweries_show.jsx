@@ -21,7 +21,7 @@ class BreweryShow extends React.Component{
                     <div className="beer-info">
                         <h2 className="show-item show-info">{brewery.name}</h2>
                         <p className="show-style show-item">{brewery.location}</p> 
-                        <p className="num-beers">{brewery.numBeers} Beers</p>                       
+                        <Link to={`/breweries/${this.props.brewery.id}/beers`} className="num-beers">{brewery.numBeers} Beers</Link>     
                     </div>
 
                     <div className="show-bottom">

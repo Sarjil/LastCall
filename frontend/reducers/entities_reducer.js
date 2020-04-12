@@ -5,7 +5,7 @@ import breweriesReducer from './brewery_reducer'
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
-    // beers: beersReducer,
+    beers: beersReducer,
     breweries: breweriesReducer
 });
 

@@ -56,6 +56,9 @@
     // bottom: 50px;
 }
 
+// .homepage-add-containers{
+//     min-height: 755px;
+// }
 
 .masthead-img{
     display: flex;
@@ -105,3 +108,15 @@
     bottom: 20px;
 }
 
+.homepage-second-sect{
+    // position: absolute;
+    margin-top: 135px;
+    min-height: 735px;
+    
+}
+
+.homepage-cont{
+   display: flex;
+   flex-direction: column;
+   
+}

@@ -8,6 +8,7 @@ import FeedContainer from './feed/feed_container';
 import HeaderContainer from './header/header_container'
 import BreweriesIndexContainer from './breweries/breweries_index_container'
 import BreweriesShowContainer from './breweries/breweries_show_container'
+import BeersIndexContainer from './beers/beer_index_container'
 
 const App = () =>(
     <div>
@@ -22,8 +23,11 @@ const App = () =>(
             <ProtectedRoute path='/' component={HeaderContainer} />   
             <Switch> 
                 <ProtectedRoute path='/feed' component={FeedContainer} />   
+                {/* <Route exact path='/breweries/:breweryId/beers' component={BreweryBeerShowContainer} />    */}
                 <Route exact path='/breweries/:breweryId' component={BreweriesShowContainer} />   
                 <ProtectedRoute path='/breweries' component={BreweriesIndexContainer} />   
+                <ProtectedRoute path='/beers' component={BeersIndexContainer} />   
+
             </Switch>
         </div>
 
