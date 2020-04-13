@@ -13,13 +13,16 @@ export const fetchBeer = (beerId) =>(
     })
 )
 
-export const createBeer = (beer) =>(
-    $.ajax({
-        method: "POST",
+export const createBeer = (formData) => {
+    return $.ajax({
         url: "/api/beers",
-        data: {beer}
-    })
-)
+        method: "POST",
+        data: formData,
+        contentType: false,
+        processData: false
+    });
+};
+
 
 export const updateBeer = (beer) =>(
     $.ajax({

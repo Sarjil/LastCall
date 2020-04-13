@@ -7,7 +7,7 @@ class Api::BeersController < ApplicationController
 
     def show
         @beer = Beer.find(params[:id])
-        return :show
+        render :show
     end
 
     def create
@@ -31,7 +31,7 @@ class Api::BeersController < ApplicationController
     private
 
     def beer_params
-        params.require(:beer).permit(:name, :style, :abv, :description, :photo, :brewery_id)
+        params.require(:beer).permit(:name, :style, :abv, :description, :brewery_id)
     end
 
 end

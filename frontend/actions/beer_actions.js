@@ -4,9 +4,9 @@ export const RECEIVE_BEERS = "RECEIVE_BEERS";
 export const RECEIVE_BEER = "RECEIVE_BEER";
 export const RECEIVE_BEER_ERRORS = "RECEIVE_BEER_ERRORS";
 
-const receiveBeer = payload =>({
+const receiveBeer = beer =>({
     type: RECEIVE_BEER,
-    payload
+    beer
 })
 
 const receiveBeers = beers =>({
@@ -21,7 +21,7 @@ const receiveBeerErrors = errors =>({
 
 
 export const fetchBeer = (beerId) => dispatch =>(
-    BeerUtil.fetchBeer(beerId).then(payload => dispatch(receiveBeer(payload)))
+    BeerUtil.fetchBeer(beerId).then(beer => dispatch(receiveBeer(beer)))
 )
 
 export const fetchBeers = () => dispatch =>(
