@@ -4,34 +4,34 @@ import {Link} from 'react-router-dom'
 class BeerShow extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     beer: {}
-        // }
+        this.state = { beer: {} }
     }
 
     componentDidMount() {
         this.props.fetchBeer(this.props.match.params.beerId)
-            .then(beerAction => this.setState({ beer: beerAction.beer }));
+            .then(beer => this.setState({ beer: beer.beer.beer })); 
     }
 
     render() {
-        const beer = this.props.beer;
-        debugger 
+        
         return(
+            <div className= "brewery-index-container show-main">
+               
+                <div className="show-top">  
+                     <img src={this.state.beer.imgUrl} className="show-img"/> 
+                      <div className="beer-info"> 
 
-            <div className= "beer-index-container show-main">
-                <div className="show-top">
-                    {/* <img src={beer.imgUrl} className="show-img"/> */}
-                    <div className="beer=info">
-                        <h2 className="show-item show-info">{beer.name}</h2>
-                        <p className="show-style show-item">{beer.brewery}</p>
-                        <p className="show-style show-item">{beer.style}</p>
-                        <p className="show-style show-item">{beer.abv}</p>
-                        <p className="show-style show-item">{beer.description}</p>
-                        <Link to={`/breweries/${beer.brewery.id}`}>{beer.brewery}</Link>
+                        <h2 className="show-item show-info">{this.state.beer.name}</h2> 
+                        <Link to={`/breweries/${this.state.beer.breweryId}`}>{this.state.beer.breweryName}</Link>
+                        <p className="show-style show-item">Style: {this.state.beer.style}</p>
+                        <p className="show-style show-item">ABV: {this.state.beer.abv}</p>
 
-                    </div>
-                </div>
+                     </div> 
+
+                     <div className="show-bottom">
+                        <p className="show-description">{this.state.beer.description}</p> 
+                     </div>
+                 </div>
 
 
             </div>

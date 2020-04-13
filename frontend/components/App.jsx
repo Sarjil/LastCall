@@ -30,7 +30,7 @@ const App = () =>(
                 {/* <Route exact path='/breweries/:breweryId/beers' component={BreweryBeerShowContainer} />    */}
                 <Route exact path='/breweries/:breweryId' component={BreweriesShowContainer} />   
                 <ProtectedRoute path='/breweries' component={BreweriesIndexContainer} />   
-                <Route exact path='/beers/:beerId' component={BeersShowContainer} />   
+                <Route path='/beers/:beerId' component={BeersShowContainer} />   
                 <ProtectedRoute path='/beers' component={BeersIndexContainer} />   
 
             </Switch>

@@ -16,6 +16,7 @@ class Api::BeersController < ApplicationController
             render :show
         else
             render json: @beer.errors.full_messages, status: 422
+            # debugger
         end
     end 
 

@@ -4,32 +4,45 @@ import React from 'react';
 class AddBeerForm extends React.Component{
     constructor(props){
         super(props);
-        this.state = { name: "", description: "", abv: "", style: "", breweryId: ""}
+        this.state = { name: "", description: "", abv: "", style: "", brewery_id: ""}
         this.handleSubmit = this.handleSubmit.bind(this);
-        
     }
-
+    
     componentDidMount(){
         this.props.fetchBreweries(); 
     }
+    
+    // componentWillUnmount(){
+    //     this.props.deleteSessionErorrs();
+    // }
 
     update(field){
+        // debugger
+        const that = this;
         return e => {
             this.setState({ [field]: e.target.value})
         }
     }
-
+    
     handleSubmit(e){
+        // debugger
         e.preventDefault(); 
         this.props.createBeer(this.state);
-    }
 
+    }
+    
     render(){
         const allBreweries = this.props.breweries.map(brewery => {
             return <option value={brewery.id} key={brewery.name}>{brewery.name}</option>
         })
-    
-        return(
+        
+        // const beerErrors = this.props.errors;
+        // const showError = Boolean(beerErrors) && beerErrors.length > 0 ? "show-error" : "";
+        // const showErrors = beerErrors.map(error => {
+        //     return <li key={error} className="error-li">{error}</li>
+        // })  
+
+        return( 
             <div className="beer-form-outer">
 
             <form className="beer-form" onSubmit={this.handleSubmit}>
@@ -38,13 +51,14 @@ class AddBeerForm extends React.Component{
                     <h2 className="beer-form-header">Add New Beer</h2>
                     <p className="beer-form-sub-header">Sorry we don't have what you're looking for. Fill out the form to add a new beer!</p>
                 </div>
-
+                    {/* <ul className={`errors-list ${showError}`}> {showErrors} </ul> */}
                 <label className="beer-inputs beer-name"> Beer Name
                     <input type="text" value={this.state.name} onChange={this.update('name')} />
                 </label>
 
                 <label className="beer-inputs beer-brewery"> Brewery
-                    <select value={this.state.breweryId} onChange={this.update('breweryId')}>
+                    <select value={this.state.brewery_id} onChange={this.update('brewery_id')}>
+                    
                     {allBreweries}    
                     </select> 
                 </label>

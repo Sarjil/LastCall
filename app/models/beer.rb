@@ -16,7 +16,6 @@ class Beer < ApplicationRecord
 
     belongs_to :brewery
     has_one_attached :photo 
-
     after_initialize :ensure_default_photo
 
   def ensure_default_photo

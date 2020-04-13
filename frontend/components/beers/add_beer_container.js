@@ -4,14 +4,10 @@ import {fetchBreweries} from '../../actions/brewery_action'
 import {deleteSessionErrors} from '../../actions/session_actions'
 import AddBeerForm from './add_beer_form'
 
-const msp = state => {
-    return{
-        
-        breweries: Object.values(state.entities.breweries),
-         
-    }
-    
-}
+const msp = state => ({
+    breweries: Object.values(state.entities.breweries),
+    errors: state.errors.beer    
+})
 
 const mdp = dispatch => ({
     createBeer: beer => dispatch(createBeer(beer)),

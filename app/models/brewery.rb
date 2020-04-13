@@ -10,9 +10,8 @@
 #  description :text             not null
 #
 class Brewery < ApplicationRecord
-    validates :name, presence: true
-    validates :location, presence: true 
-
+    validates :name, :location, presence: true
+    
     has_many :beers
     has_one_attached :photo 
     after_initialize :ensure_default_photo
