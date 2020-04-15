@@ -1,15 +1,19 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
 import {fetchBrewery} from '../../actions/brewery_action'
-import BreweryBeerIndex from './brewery_beer_index';
+import {fetchBeers} from '../../actions/beer_actions'
+import BreweryBeerIndex from './breweries_beer_index';
 
-const msp = (state,ownProps) => ({
-    brewery: state.entities.breweries[ownProps.match.params.breweryId],
-    beer: state.entities.beers 
-})
+const msp = (state,ownProps) => { 
+    return {
+        brewery: state.entities.breweries[ownProps.match.params.breweryId],
+        beer: state.entities.beers        
+    }
+}
 
 const mdp = dispatch => ({
-    fetchBrewery: breweryId => dispatch(fetchBrewery(breweryId))
+    fetchBrewery: breweryId => dispatch(fetchBrewery(breweryId)),
+    fetchBeers: () => dispatch(fetchBeers()) 
 })
 
 export default withRouter(connect(msp,mdp)(BreweryBeerIndex)); 

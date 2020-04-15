@@ -7,5 +7,7 @@ Rails.application.routes.draw do
       resource :session, only: [:create,:destroy]
       resources :breweries, only:[:show,:index, :create, :update] 
       resources :beers, only:[:index, :show, :create, :update]
+      resources :checkins, only:[:index, :show, :create, :update, :destroy]
+      resources :comments, only:[:update, :create, :destroy]
   end
 end

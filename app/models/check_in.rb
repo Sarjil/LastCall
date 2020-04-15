@@ -10,4 +10,10 @@
 #  updated_at :datetime         not null
 #
 class CheckIn < ApplicationRecord
+    validates :author_id, :beer_id, presence: true 
+
+    belongs_to :beer_id
+    belongs_to :author,
+        foreign_key: :author_id,
+        class_name: :User
 end
