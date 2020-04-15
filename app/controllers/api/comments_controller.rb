@@ -18,7 +18,7 @@ class Api::CommentsController < ApplicationController
         if @comment && @comment.destroy
             render :show
         else
-            render json: ["Comment not found"], status :422
+            render json: ["Comment not found"], status: 422
         end
     end
     
