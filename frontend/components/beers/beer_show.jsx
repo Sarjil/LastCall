@@ -18,21 +18,25 @@ class BeerShow extends React.Component {
             <div className= "brewery-index-container show-main">
                
                 <div className="show-top">  
-                     <img src={this.state.beer.imgUrl} className="show-img"/> 
-                      <div className="beer-info"> 
 
+                    <img className="feature-icon beer-img" src={window.beerIcon} />
+
+                      <div className="beer-info">
                         <h2 className="show-item show-info">{this.state.beer.name}</h2> 
-                        <Link to={`/breweries/${this.state.beer.breweryId}`}>{this.state.beer.breweryName}</Link>
+                        <Link className="orange-link" to={`/breweries/${this.state.beer.breweryId}`}>{this.state.beer.breweryName}</Link>
                         <p className="show-style show-item">Style: {this.state.beer.style}</p>
                         <p className="show-style show-item">ABV: {this.state.beer.abv}</p>
+                        <Link className="orange-link" to={`/beers/${this.state.beer.id}/edit`}> Edit Beer </Link>
 
-                     </div> 
+                       </div> 
 
-                     <div className="show-bottom">
-                        <p className="show-description">{this.state.beer.description}</p> 
-                     </div>
+
+               </div>
+                
+                
+                 <div className="show-bottom">
+                    <p className="show-description">{this.state.beer.description}</p> 
                  </div>
-
 
             </div>
         )

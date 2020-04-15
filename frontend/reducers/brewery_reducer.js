@@ -6,7 +6,7 @@ const breweriesReducer = (state = {}, action) =>{
 
     switch(action.type){
         case RECEIVE_BREWERY:
-            return Object.assign({}, state, {[action.brewery.id]: action.beer.brewery})
+            return Object.assign({}, state, {[action.id]: action.brewery})
         case RECEIVE_BREWERIES:
             return Object.assign({}, state, action.breweries)
         case RECEIVE_BEER:

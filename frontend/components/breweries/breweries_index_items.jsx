@@ -6,8 +6,14 @@ const BreweryIndexItems = props =>{
     return(
             <div className="brewery-item">
                 <div className="brewery-left">
-                    <img src={props.brewery.imgUrl} className="brew-index-img"/>
-                    <Link to={`breweries/${props.brewery.id}`}>{props.brewery.name}</Link>
+
+                <img className="brew-index-img" src={window.breweryIcon} />
+
+                <div className="brewery-show-sect">
+                    <Link className="orange-link" to={`breweries/${props.brewery.id}`}>{props.brewery.name}</Link>
+                    <p className="beer-description">{props.brewery.location}</p>
+                </div>
+
                 </div>
 
             <div className="brewery-right">

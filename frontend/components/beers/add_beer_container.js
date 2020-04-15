@@ -2,6 +2,7 @@ import {connect} from 'react-redux'
 import {createBeer} from '../../actions/beer_actions'
 import {fetchBreweries} from '../../actions/brewery_action'
 import {deleteSessionErrors} from '../../actions/session_actions'
+import {withRouter} from 'react-router-dom'
 import AddBeerForm from './add_beer_form'
 
 const msp = state => ({
@@ -15,4 +16,4 @@ const mdp = dispatch => ({
     deleteSessionErrors: () => dispatch(deleteSessionErrors())
 })
 
-export default connect(msp,mdp)(AddBeerForm); 
+export default withRouter(connect(msp,mdp)(AddBeerForm)); 

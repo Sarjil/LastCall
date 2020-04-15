@@ -28,12 +28,16 @@ export const fetchBeers = () => dispatch =>(
     BeerUtil.fetchBeers().then(beers => dispatch(receiveBeers(beers)))
 )
 
-export const createBeer = (beer) => dispatch =>(
-    BeerUtil.createBeer(beer).then(beer => dispatch(receiveBeer(beer))),
-    errors => (dispatch(receiveBeerErrors(errors.responseJSON)))
-)
+export const createBeer = (beer) => dispatch => (
+    BeerUtil.createBeer(beer).then(
+        beer => dispatch(receiveBeer(beer)),
+        errors => dispatch(receiveBeerErrors(errors.responseJSON))
+    )
+);
+
 
 export const updateBeer = (beer) => dispatch =>(
-    BeerUtil.updateBeer(beer).then(beer => dispatch(receiveBeer(beer))),
-    errors => (dispatch(receiveBeerErrors(errors.responseJSON)))
+    BeerUtil.updateBeer(beer).then(
+        beer => dispatch(receiveBeer(beer)),
+        errors => dispatch(receiveBeerErrors(errors.responseJSON)))
 )

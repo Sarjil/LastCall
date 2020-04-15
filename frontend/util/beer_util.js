@@ -25,14 +25,14 @@ export const createBeer = (beer) => {
 export const updateBeer = (beer) =>(
     $.ajax({
         method: "PATCH",
-        url: `/api/beers/${beer.id}`,
+        url: `/api/beers/${beer.id}/`,
         data: {beer} 
     })
 )
 
-export const fetchBreweryBeers = (breweryId) =>(
-    $.ajax({
-        method: "GET",
-        url: `/api/breweries/${breweryId}/beers`
-    })
-)
+// export const fetchBreweryBeers = (breweryId) =>(
+//     $.ajax({
+//         method: "GET",
+//         url: `/api/breweries/${breweryId}/beers`
+//     })
+// )

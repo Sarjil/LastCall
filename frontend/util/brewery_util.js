@@ -11,3 +11,11 @@ export const fetchBrewery = (breweryId) =>(
         url: `/api/breweries/${breweryId}`
     })
 )
+
+export const createBrewery = (brewery) => {
+    return $.ajax({
+        url: "/api/breweries",
+        method: "POST",
+        data: { brewery }
+    });
+};

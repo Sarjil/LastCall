@@ -8,8 +8,18 @@
   width: 52%;
   max-width: 60%;
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #E2E2E2;
+  border-right: 1px solid #E2E2E2;
+  border-left: 1px solid #E2E2E2;
 }
 
+
+.beer-info{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  // border-bottom: 1px solid #E2E2E2;
+}
 .beer-index-title {
   background-color: #F9F9F9;
   width: auto;
@@ -72,4 +82,16 @@
 
 .beer-index-image{
     display: flex;
+}
+
+.show-main{
+  color: #999999
+}
+
+.show-info{
+  color: black
+}
+
+.beer-item-picture{
+  background-image: image-url("beericon.png"); 
 }

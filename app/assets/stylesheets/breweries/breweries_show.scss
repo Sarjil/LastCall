@@ -1,6 +1,5 @@
 .show-top {
   display: flex;
-  flex-direction: column;;
   margin-bottom: 10px;
 }
 
@@ -11,5 +10,19 @@
 }
 
 .show-bottom{
-    border: 1px solid #E2E2E2;
+    border-top: 1px solid #E2E2E2;
+}
+
+.show-top-description{
+  display:flex
+}
+
+.show-main{
+  display: flex;
+  flex-direction: column;
+}
+
+.brewery-show-sect{
+  display:flex;
+  flex-direction: column;
 }

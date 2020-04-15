@@ -22,7 +22,9 @@ class Api::BeersController < ApplicationController
 
     def update
         @beer = Beer.find(params[:id])
+        debugger
         if @beer
+            debugger
             render :show
         else
             render json: ['Cannot Find Beer'], status: 404

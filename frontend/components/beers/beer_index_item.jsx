@@ -6,10 +6,10 @@ const BeerIndexItem = props => (
     <>
         <div className="beer-index-item">
             
-            <img src={props.beer.imgUrl} className="beer-img"/>
+            <img className="feature-icon beer-img" src={window.beerIcon} />
 
             <div className="index-item-beer">
-                <Link to={`beers/${props.beer.id}`}>
+                <Link className="orange-link" to={`beers/${props.beer.id}`}>
                     {props.beer.name}
                 </Link>
                 {/* Brewery: {props.brewery.name} */}

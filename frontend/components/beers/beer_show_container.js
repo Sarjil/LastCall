@@ -14,4 +14,4 @@ const mdp = dispatch => ({
     fetchBeer: beerId => dispatch(fetchBeer(beerId))
 })
 
-export default connect(null,mdp)(BeerShow);
+export default connect(msp,mdp)(BeerShow);

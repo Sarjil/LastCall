@@ -27,7 +27,8 @@ class AddBeerForm extends React.Component{
     handleSubmit(e){
         // debugger
         e.preventDefault(); 
-        this.props.createBeer(this.state);
+        const history = this.props.history; 
+        this.props.createBeer(this.state).then( (beer) => {history.push(`/beers/${beer.beer.beer.id}`)});
 
     }
     
@@ -58,7 +59,7 @@ class AddBeerForm extends React.Component{
 
                 <label className="beer-inputs beer-brewery"> Brewery
                     <select value={this.state.brewery_id} onChange={this.update('brewery_id')}>
-                    
+                    <option value="Please" selected="true" >Please Select A Brewery</option>
                     {allBreweries}    
                     </select> 
                 </label>

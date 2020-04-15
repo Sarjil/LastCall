@@ -16,12 +16,10 @@ class BreweriesIndex extends React.Component{
         });
 
         return(
-            <div className="brewery-index-container">
-                <div className="brewery-index-header"> Breweries </div>
-                <div className="brewery-index-body"> 
-                    <ul>
-                        {breweryLis}
-                     </ul>
+            <div className="beer-index">
+                <div className="beer-index-title"> Breweries </div>
+                <div className="beer-index-body"> 
+                    <ul> {breweryLis}</ul>
                  </div>
             </div>
         )
