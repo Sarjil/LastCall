@@ -22,15 +22,15 @@ class User < ApplicationRecord
     attr_reader :password
     #FIGVAPER 
 
-    has_many :toasts
-    has_many :checkins,
-    foreign_key: :author_id,
-    class_name: :Checkin, 
-    dependent: :destroy
+    # has_many :toasts
+    # has_many :checkins,
+    # foreign_key: :author_id,
+    # class_name: :Checkin, 
+    # dependent: :destroy
 
-    has_many :checkedin_beers,
-    through: :checkins,
-    source: :beer 
+    # has_many :checkedin_beers,
+    # through: :checkins,
+    # source: :beer 
 
     def self.find_by_credentials(username,password)
         @user = User.find_by(username: username)

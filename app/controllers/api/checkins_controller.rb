@@ -1,12 +1,12 @@
-class Api::CheckinsController < ApplicationController
+class Api::CheckInsController < ApplicationController
 
     def index
-       @checkins = Checkin.all 
+       @checkins = CheckIn.all 
        render :index
     end
 
     def show
-        @checkin = Checkin.find(params[:id])
+        @checkin = CheckIn.find(params[:id])
         render :show
     end
 
