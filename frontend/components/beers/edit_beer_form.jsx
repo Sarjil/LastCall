@@ -5,7 +5,7 @@ class EditBeerForm extends React.Component{
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.beer;
-    }w
+    }
 
     componentDidMount(){
         this.props.fetchBeer(this.props.match.params.beerId)
