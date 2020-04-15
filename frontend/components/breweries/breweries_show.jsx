@@ -13,8 +13,8 @@ class BreweryShow extends React.Component{
     }
 
     render(){
-        debugger
-        if(this.props.brewery === undefined) return null; 
+        // debugger
+        // if(this.props.brewery === undefined) return null; 
 
         const brewery = this.props.brewery;
 
@@ -25,7 +25,8 @@ class BreweryShow extends React.Component{
                 <div className="show-top">
 
                     <div className="beer-img">
-                        <img className="show-img" src={window.breweryIcon} />
+                        {/* <img className="show-img" src={window.breweryIcon} /> */}
+                        <img src={brewery.imgUrl} className="brew-index-img" />
                     </div>
 
                     <div className="beer-info">
