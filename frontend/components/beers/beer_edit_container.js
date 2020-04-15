@@ -3,6 +3,7 @@ import EditBeerForm from './edit_beer_form'
 import {updateBeer, fetchBeer} from '../../actions/beer_actions'
 import { fetchBreweries } from '../../actions/brewery_action'
 import { deleteSessionErrors } from '../../actions/session_actions'
+import {withRouter} from 'react-router-dom'
 
 const msp = (state,ownProps) =>{
     return {
@@ -18,4 +19,4 @@ const mdp = dispatch => ({
     deleteSessionErrors: () => dispatch(deleteSessionErrors())
 })
 
-export default connect(msp,mdp)(EditBeerForm);
+export default withRouter(connect(msp,mdp)(EditBeerForm));

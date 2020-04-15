@@ -5,7 +5,7 @@ class EditBeerForm extends React.Component{
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.beer;
-    }
+    }w
 
     componentDidMount(){
         this.props.fetchBeer(this.props.match.params.beerId)
@@ -23,8 +23,8 @@ class EditBeerForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updateBeer(this.state);
-        debugger
+        const history = this.props.history; 
+        this.props.updateBeer(this.state).then((beer) => { history.push(`/beers/${beer.beer.beer.id}`) });
 
     }
 

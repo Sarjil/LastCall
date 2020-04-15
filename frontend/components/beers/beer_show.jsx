@@ -26,7 +26,6 @@ class BeerShow extends React.Component {
                         <Link className="orange-link" to={`/breweries/${this.state.beer.breweryId}`}>{this.state.beer.breweryName}</Link>
                         <p className="show-style show-item">Style: {this.state.beer.style}</p>
                         <p className="show-style show-item">ABV: {this.state.beer.abv}</p>
-                        {/* <Link className="orange-link" to={`/beers/${this.state.beer.id}/edit`}> Edit Beer </Link> */}
 
                        </div> 
 
@@ -36,6 +35,9 @@ class BeerShow extends React.Component {
                 
                  <div className="show-bottom">
                     <p className="show-description">{this.state.beer.description}</p> 
+                    <Link className=" orange-link" to={`/beers/${this.state.beer.id}/edit`}> 
+                        <img className="edit-button orange-link" src={window.editIcon} /> 
+                    </Link>
                  </div>
 
             </div>

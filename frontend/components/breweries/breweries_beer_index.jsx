@@ -16,7 +16,7 @@ class BreweryBeerIndex extends React.Component{
     }
 
     render(){
-        debugger 
+        // debugger 
         let beers = this.props.brewery.beer_ids.map( id => {
             let beer = this.props.beer[id];
             return <BeerIndexItem beer={beer} key={beer.id} /> 

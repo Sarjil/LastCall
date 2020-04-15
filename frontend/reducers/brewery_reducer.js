@@ -3,10 +3,10 @@ import {RECEIVE_BEER} from '../actions/beer_actions'
 
 const breweriesReducer = (state = {}, action) =>{
     Object.freeze(state);
-
+     
     switch(action.type){
         case RECEIVE_BREWERY:
-            return Object.assign({}, state, {[action.id]: action.brewery})
+            return Object.assign({}, state, {[action.brewery.brewery.id]: action.brewery.brewery})
         case RECEIVE_BREWERIES:
             return Object.assign({}, state, action.breweries)
         case RECEIVE_BEER:

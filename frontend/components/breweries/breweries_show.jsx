@@ -4,17 +4,20 @@ import {Link} from 'react-router-dom'
 class BreweryShow extends React.Component{
     constructor(props){
         super(props);
-        this.state = {brewery: {}}
+        this.state = {brewery: undefined}
     }
 
     componentDidMount(){
+        // debugger 
         this.props.fetchBrewery(this.props.match.params.breweryId).
-        then(brewery => this.setState({brewery: brewery.brewery.brewery}))
+        then(brewery => {
+            // debugger
+            this.setState({brewery: brewery.brewery.brewery})})
     }
 
     render(){
         // debugger
-        // if(this.props.brewery === undefined) return null; 
+        if(this.state.brewery === undefined) return null; 
 
         const brewery = this.props.brewery;
 
