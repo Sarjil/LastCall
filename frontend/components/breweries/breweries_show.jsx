@@ -24,7 +24,7 @@ class BreweryShow extends React.Component{
 
         return(
             
-            <div className="brewery-index-container show-main">
+            <div className="brewery-index-container show-main beer-form-outer">
 
                 <div className="show-top">
 

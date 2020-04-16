@@ -27,4 +27,6 @@ class Beer < ApplicationRecord
     self.photo.attach(io: File.open('app/assets/images/favicon.png'), filename: 'favicon.png', content_type: 'image/png') unless self.photo.attached?
   end
 
+  
+
 end

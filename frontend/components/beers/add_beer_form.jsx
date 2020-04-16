@@ -78,8 +78,8 @@ class AddBeerForm extends React.Component{
 
 
             <button type="submit" className="session-btn add-beer-btn">Add New Beer</button>
-            </form>
-
+                
+                </form>
             </div>
         )
     }

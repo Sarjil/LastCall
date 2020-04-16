@@ -11,7 +11,7 @@ class Feed extends React.Component{
         const {user,logout} = this.props; 
 
         return(
-            <div className="beer-index">
+            <div className="beer-index beer-form-outer">
 
                 <div className="beer-index-title"> FEED GOES HERE.....eventually </div>
                 <div className="beer-indx-body">
