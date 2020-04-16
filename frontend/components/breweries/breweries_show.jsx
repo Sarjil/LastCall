@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import BreweryBeerContainer from './breweries_beer_container'
 
 class BreweryShow extends React.Component{
     constructor(props){
@@ -11,8 +12,8 @@ class BreweryShow extends React.Component{
         // debugger 
         this.props.fetchBrewery(this.props.match.params.breweryId).
         then(brewery => {
-            // debugger
             this.setState({brewery: brewery.brewery.brewery})})
+        
     }
 
     render(){
@@ -43,8 +44,17 @@ class BreweryShow extends React.Component{
 
                 <div className="show-bottom">
                     <p className="show-description">{brewery.description}</p>
+                    <Link className=" orange-link" to={`/breweries/${this.state.brewery.id}/edit`}>
+                        <img className="edit-button orange-link" src={window.editIcon} />
+                    </Link>
                 </div>
 
+                <div className="brewery-beers">
+                    <div className="brewery-beers-body">
+                        <p className="brewery-beers-title">{brewery.name}'s Beers</p>
+                        <BreweryBeerContainer />
+                    </div>
+                </div>
             </div>
         )
     }

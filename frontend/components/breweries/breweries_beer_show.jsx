@@ -12,4 +12,4 @@ const BreweriesBeerShow = () => {
     )
 }
 
-export default BreweriesBeerShow; Brewerie
+export default BreweriesBeerShow; 

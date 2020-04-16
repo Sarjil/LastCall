@@ -32,3 +32,10 @@ export const createBrewery = (brewery) => dispatch =>(
         brewery => dispatch(receiveBrewery(brewery)))
         // errors => dispatch(receiveBreweryErrors(errors.responseJSON)))
     )
+
+
+export const updateBrewery = (brewery) => dispatch => (
+    BreweryUtil.updateBrewery(brewery).then(
+        brewery => dispatch(receiveBrewery(brewery)))
+        
+)

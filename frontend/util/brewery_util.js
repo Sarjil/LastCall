@@ -19,3 +19,11 @@ export const createBrewery = (brewery) => {
         data: { brewery }
     });
 };
+
+export const updateBrewery = (brewery) => (
+    $.ajax({
+        method: "PATCH",
+        url: `/api/breweries/${brewery.id}/`,
+        data: { brewery }
+    })
+)

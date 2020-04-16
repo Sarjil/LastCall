@@ -22,7 +22,7 @@ class Api::BreweriesController < ApplicationController
 
     def update
         @brewery = Brewery.find(params[:id])
-        if @brewery 
+        if @brewery.update_attributes(brewery_params) 
             render :show
         else
             render json: ['Cannot find Brewery'], status: 404
