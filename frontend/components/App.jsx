@@ -17,7 +17,7 @@ import BreweriesBeerContainer from './breweries/breweries_beer_container'
 import BreweryEditContainer from './breweries/edit_brewery_container'
 
 const App = () =>(
-    <div>
+    <div className="protected-routes">
         <div className = "main-bg">
             <AuthRoute path='/signin' component={SignInContainer} />
             <AuthRoute path='/signup' component={SignUpContainer} />
