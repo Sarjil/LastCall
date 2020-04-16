@@ -23,7 +23,7 @@ user6 = User.create!(username:"YumBeer", email:"mmmburrr@netscape.net", password
 #Breweries
 
 stone = Brewery.create!(name:"Stone Brewing Co.", location:"Escondido, California", description:" Stone Brewing is a brewery headquartered in Escondido, California, USA. Founded in 1996 in San Marcos, California, it is the largest brewery in Southern California. Based on 2016 sales volume it is the eighth largest craft brewery in the United States. ")
-alchemist = Brewery.create!(name:"The Alchemist", location:"Stowe,Vermont", description:"The Alchemist is a family run brewery specializing in fresh, unfiltered IPA. John and Jen Kimmich originally opened The Alchemist as a 60 seat brew pub in the village of Waterbury in 2003. After eight years of success and growing popularity, they decided to open a small production brewery. Today The Alchemist currently operates two breweries in Vermont and distributes Heady Topper and Focal Banger throughout the state.")
+alchemist = Brewery.create!(name:"The Alchemist", location:"Stowe,Vermont", description:"The Alchemist is a family run brewery specializing in fresh, unfiltered IPA. John and Jen Kimmich originally opened The Alchemist as a 60 seat brew pub in the village of Waterbury in 2003. After eight years of success and growing popularity, they decided to open a small seedsuction brewery. Today The Alchemist currently operates two breweries in Vermont and distributes Heady Topper and Focal Banger throughout the state.")
 samadams = Brewery.create!(name:"Samuel Adams Boston Brewery ", location:"Boston, Massachussets", description:"Well-known brewery with a long history lures locals & visitors with tours, tastings & a gift shop.")
 bluepoint = Brewery.create!(name:"Blue Point", location:"Patchogue, NY", description:"At Blue Point, we brew beer that stands up to New York's standards. We know it’s good, they know it’s good, and if someone disagrees, f*** ‘em. We first and foremost brew beer that we want to drink. If there’s some leftover, we’ll sell it. ")
 singlecut = Brewery.create!(name:"SingleCut Beersmiths", location:"Queens, NY", description:"Brewing all beers on site, this taproom offers live music, outdoor seating, and facility tours")
@@ -37,9 +37,9 @@ samadams.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/samadams
 alchemist.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/alchemistlogo.jpg'), filename: 'alchemistlogo.jpg')
 stone.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/stonelogo.png'), filename: 'stonelogo.png')
 bluepoint.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/bluepointlogo.png'), filename: 'bluepointlogo.png')
-singlecut.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/singluecutlogo.png'), filename: 'singlecutlogo.png')
-hill.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/hill.png'), filename: 'hill.png')
-whiteclaw.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/whiteclaw.png'), filename: 'whiteclaw.png')
+singlecut.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/singluecutlogo.png'), filename: 'singluecutlogo.png')
+hill.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/hill.png'), filename: 'hill.png')
+whiteclaw.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/whiteclaw.png'), filename: 'whiteclaw.png')
 
 
 
@@ -54,7 +54,7 @@ stone1.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/stone_ipa.
 stone2.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/fear_movie_lions.jpeg'), filename: 'fear_movie_lions.jpeg')
 stone3.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/buenaviza.jpg'), filename: 'buenaviza.jpg')
 
-alchemist1 = Beer.create!(name: "Heady Topper", brewery_id: alchemist.id, style:"Double IPA", abv:"8.0%", description: "We love hops – that’s why our flagship Double IPA, Heady Topper, is packed full of them. Heady Topper was designed to showcase the complex flavors and aromas these flowers produce. The Alchemist has been brewing Heady Topper since 2003. This Double IPA is not intended to be the strongest or most bitter DIPA. It is brewed to give you wave after wave of hop flavor without any astringent bitterness. We brew Heady Topper with a proprietary blend of six hops – each imparting its own unique flavor and aroma. Take a big sip of Heady and see what hop flavors you can pick out. Orange? Tropical Fruit? Pink Grapefruit? Pine? Spice? There is just enough malt to give this beer some backbone, but not enough to take the hops away from the center stage.")
+alchemist1 = Beer.create!(name: "Heady Topper", brewery_id: alchemist.id, style:"Double IPA", abv:"8.0%", description: "We love hops – that’s why our flagship Double IPA, Heady Topper, is packed full of them. Heady Topper was designed to showcase the complex flavors and aromas these flowers seedsuce. The Alchemist has been brewing Heady Topper since 2003. This Double IPA is not intended to be the strongest or most bitter DIPA. It is brewed to give you wave after wave of hop flavor without any astringent bitterness. We brew Heady Topper with a proprietary blend of six hops – each imparting its own unique flavor and aroma. Take a big sip of Heady and see what hop flavors you can pick out. Orange? Tropical Fruit? Pink Grapefruit? Pine? Spice? There is just enough malt to give this beer some backbone, but not enough to take the hops away from the center stage.")
 alchemist2 = Beer.create!(name: "Focal Banger", brewery_id: alchemist.id, style:"American IPA", abv:"7.0%", description:"American IPA with Citra & Mosaic hops.")
 alchemist3 = Beer.create!(name: "Luscious", brewery_id: alchemist.id, style:"Stout", abv:"9.0%", description:"British-style imperial stout")
 alchemist1.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/headytopper.jpg'), filename: 'headytopper.jpg')
@@ -69,7 +69,7 @@ sam2.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/octoberfest.
 sam3.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/cherrywheat.jpeg'), filename: 'cherrywheat.jpeg')
 
 
-bluepoint1 = Beer.create!(name: "Toasted Lager", brewery_id: bluepoint.id , style:"Lager", abv:"5.5%", description:"Toasted Lager was originally named for the “toasted” characteristics of our original direct-fire brick kettle. Our World Beer Cup gold medal winning flagship brew is brewed with a blend of six specialty malts for a flavor as rich and unique as the town it’s from. Toasted Lager’s balanced flavor of malt and hops makes for easy drinking and our special proprietary lager yeast produces an exceptional, long-lasting smooth finish.")
+bluepoint1 = Beer.create!(name: "Toasted Lager", brewery_id: bluepoint.id , style:"Lager", abv:"5.5%", description:"Toasted Lager was originally named for the “toasted” characteristics of our original direct-fire brick kettle. Our World Beer Cup gold medal winning flagship brew is brewed with a blend of six specialty malts for a flavor as rich and unique as the town it’s from. Toasted Lager’s balanced flavor of malt and hops makes for easy drinking and our special proprietary lager yeast seedsuces an exceptional, long-lasting smooth finish.")
 bluepoint2 = Beer.create!(name: "Imperial Sunhine", brewery_id: bluepoint.id , style:"Blonde Ale", abv:"9.6%", description:"Our Imperial Sunshine is a bright, refreshing brew with a `bit of punch` - not for the faint hearted. Brewed with orange peel, this strong blonde ale packs a nose reminiscent of orange Tic Tacs, hard candy and our favorite non-alcoholic drink, Tang. But don't get it twisted... the drinkability on this one will have you waking up wondering how you lost your shoe. Enjoy the trip!")
 bluepoint3 = Beer.create!(name: "Hoptical Illusion", brewery_id: bluepoint.id , style:"IPA", abv:"7.0%", description:"Plenty of hops are added to this brew in 5 different ways, which allows the “Essence of the Hop” to burst through and give that signature resiny, citrus-filled flavor for which Hoptical Illusion is known. This award-winning IPA is truly a hop lover’s dream.")
 bluepoint1.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/toasted_lager.png'), filename: 'toasted_lager.png')
@@ -82,7 +82,7 @@ singlecut2 = Beer.create!(name: "ERIC MORE COWBELL! CHOCOLATE MILK STOUT NITRO",
 singlecut3 = Beer.create!(name: "Half-Stack IPA", brewery_id: singlecut.id , style:"IPA", abv:"6.6%", description:"CRANK THE HOPS to the point right before tastebuds bleed with a PNW / Aussie blend. Super smooth malt base, pine resin, bright tangerine and pineapple hop flavor and aromatics.  At 105 IBU’s, “Half-Stack” is a relative term – As we like to say, “If it’s too hoppy, you’re too old!”")
 singlecut4 = Beer.create!(name: "Kim Hisbiscus Sour", brewery_id: singlecut.id , style:"Sour", abv:"4.2%", description:"THE ORIGINAL IN OUR “KIM” LINE-UP –  Refreshingly tart and infused with hibiscus for a pleasing round herbal flavor and gorgeous pink hue. Blackcurrants are also added to give a complementary deep fruit flavor and aroma. Wheat malt provides a sweet and dry template and finally we ferment using our house lager yeast for an exceptional clean and dry finish.")
 singlecut5 = Beer.create!(name: "Weird & Gilly IPA", brewery_id: singlecut.id , style:"IPA", abv:"6.6%", description:"SOME CAT FROM JAPAN suggested we do an IPA that is J-U-I-C-Y. So we packed up a pack horse and made it happen! Soft doughy and slightly tangy malt lies under bright citrus, round tropical fruit and mild pine resin hop aromatics that underscore the waves of flavors to come.")
-singlecut1.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/janbeer.png'), filename: 'janbeer.png')
+singlecut1.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/janbeer.png'), filename: 'janbeer.png')
 singlecut2.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/ericbeer.png'), filename: 'ericbeer.png')
 singlecut3.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/halfstack.png'), filename: 'halfstack.png')
 singlecut4.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/kimhibiscus.png'), filename: 'kimhibiscus.png')
@@ -100,15 +100,15 @@ whiteclaw6 = Beer.create!(name: "Tangerine", brewery_id: whiteclaw.id, style:"Ha
 whiteclaw7 = Beer.create!(name: "Natural Lime", brewery_id: whiteclaw.id, style:"Hard Seltzer", abv:"5%", description:"Crisp Lime Flavored Hard Seltzer")
 whiteclaw8 = Beer.create!(name: "Ruby Grapefruit", brewery_id: whiteclaw.id, style:"Hard Seltzer", abv:"5%", description:"Crisp Grapefruit Flavored Hard Seltzer")
 whiteclaw9 = Beer.create!(name: "Raspberry", brewery_id: whiteclaw.id, style:"Hard Seltzer", abv:"5%", description:"Crisp Raspberry Flavored Hard Seltzer")
-singlecut1.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/pure.png'), filename: 'pure.png')
-singlecut2.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/lemon.png'), filename: 'lemon.png')
-singlecut3.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/mango.png'), filename: 'mango.png')
-singlecut4.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/blackcherry.png'), filename: 'blackcherry.png')
-singlecut5.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/watermelon.png'), filename: 'watermelon.png')
-singlecut6.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/tangerine.png'), filename: 'tangerine.png')
-singlecut7.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/lime.png'), filename: 'lime.png')
-singlecut8.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/grapefruit.png'), filename: 'grapefruit.png')
-singlecut9.photo.attach(io: open('https://lastcall-prod.s3.amazonaws.com/raspberry.png'), filename: 'raspberry.png')
+whiteclaw1.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/pure.png'), filename: 'pure.png')
+whiteclaw2.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/lemon.png'), filename: 'lemon.png')
+whiteclaw3.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/mango.png'), filename: 'mango.png')
+whiteclaw4.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/blackcherry.png'), filename: 'blackcherry.png')
+whiteclaw5.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/watermelon.png'), filename: 'watermelon.png')
+whiteclaw6.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/tangerine.png'), filename: 'tangerine.png')
+whiteclaw7.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/lime.png'), filename: 'lime.png')
+whiteclaw8.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/grapefruit.png'), filename: 'grapefruit.png')
+whiteclaw9.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/raspberry.png'), filename: 'raspberry.png')
 
 
 #  = Beer.create!(name: "", brewery_id: , style:"", abv:"", description:"")
