@@ -1,4 +1,9 @@
-[Last Call](https://lastcall-untappd.herokuapp.com/)
+![lastcall logo](./app/assets/images/favicon.png)
+![lastcall logo](./app/assets/images/favicon.png)
+![lastcall logo](./app/assets/images/favicon.png)
+
+
+[Last Call live demo](https://lastcall-untappd.herokuapp.com/)
 
 # LAST CALL 
 
