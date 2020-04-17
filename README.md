@@ -1,24 +1,30 @@
-# README
+[Last Call](https://lastcall-untappd.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# LAST CALL 
 
-Things you may want to cover:
+Last Call is a social networking app based on Untappd. The Last Call app contains a database of breweries and beers that users can add to if they don't find what they're looking for.
 
-* Ruby version
+## Technologies
 
-* System dependencies
+#### Frontend
+  * React
+  * Redux
+  * JavaScript
+  * CSS 
 
-* Configuration
+#### Backend
+  * Ruby
+  * Rails
+  * PostgreSQL
 
-* Database creation
+## Features
+    1. Users can add/edit a beer/brewery to the database
 
-* Database initialization
+    2. Beers and breweries are displayed in a list with links to their respective brewery and beers.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Future Features
+    * Users can checkin to breweries and "like" beers
+    * Rate breweries and beers
+    * Profile page will show all of the users checkins, likes, and added beers/breweries 
+    * Earn badges for reaching certain milestones 
+    * Search for beers and breweries

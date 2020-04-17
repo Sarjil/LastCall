@@ -32,6 +32,8 @@ whiteclaw  = Brewery.create!(name:"White Claw", location:"USA", description:"Whi
 #   = Brewery.create!(name:" ", location:" ", description:" ")
 #   = Brewery.create!(name:" ", location:" ", description:" ")
 
+
+
 #Brewery Photos
 samadams.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/samadamslogo.png'), filename: 'samadamslogo.png')
 alchemist.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/alchemistlogo.jpg'), filename: 'alchemistlogo.jpg')
@@ -90,6 +92,7 @@ singlecut5.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/weirdg
 
 
 hill1 = Beer.create!(name: "Amarillo Single Hop IPA", brewery_id: hill.id, style:"IPA", abv:"6.0%", description:"Single Hop India Pale Ale with Amarillo")
+
 
 whiteclaw1 = Beer.create!(name: "Pure", brewery_id: whiteclaw.id, style:"Hard Seltzer", abv:"5%", description:"Crisp Pure Hard Seltzer")
 whiteclaw2 = Beer.create!(name: "Lemon", brewery_id: whiteclaw.id, style:"Hard Seltzer", abv:"5%", description:"Crisp Lemon Flavored Hard Seltzer")

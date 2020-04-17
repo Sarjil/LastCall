@@ -38,7 +38,6 @@ const App = () =>(
                 <Route exact path='/beers/:beerId' component={BeersShowContainer} />   
                 <ProtectedRoute path='/breweries' component={BreweriesIndexContainer} />   
                 <ProtectedRoute path='/beers' component={BeersIndexContainer} />   
-
             </Switch>
         </div>
 

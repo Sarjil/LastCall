@@ -43,16 +43,22 @@
     color: black;
 }
 
-.main-bg{
+.homepage-cont{
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
-    // height: fit-content;
+    height: fit-content;
+    object-fit: contain;
     max-height: 755px;
+    min-height: 11%;
+    width: 100%;
     background: image_url("beer-background2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
     // bottom: 50px;
 }
 
@@ -109,18 +115,28 @@
 }
 
 .homepage-second-sect{
-    // position: absolute;
+    position: relative;
     margin-top: 135px;
-    min-height: 735px;
-    
+    box-sizing: initial;
+    float: left;
+    clear: both;
 }
 
-.homepage-cont{
+.homepage-first-sect{
    display: flex;
    flex-direction: column;
-   
+   position: relative;
+   float: left;   
+   clear: both;
+   z-index: 10;
+ 
+    
 }
 
 .protected-routes{
     background-image: image_url("beer_bg.jpeg");
+}
+
+.search-bar-container{
+    // position: fixed;
 }

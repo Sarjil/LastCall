@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Search = () =>(
-    <div >
+    <div className="search-bar-container">
 
         <div className="homepage-search-bar">
             <form className="homepage-search-form">

@@ -4,6 +4,7 @@ const Map = () =>(
     <div className = "nycmap">    
 
         <div className="phone-map-table">
+            
             <div className="phone-map"></div>
             <div className="space-out"></div>
             
