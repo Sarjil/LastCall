@@ -6,7 +6,8 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render :show
         else
-            render json: ['Your username and/or password is incorrect'], status: 401
+            # debugger 
+            render json: ['Your username and/or password combination is incorrect'], status: 401
         end
   end
 
