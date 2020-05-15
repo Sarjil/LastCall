@@ -1,6 +1,6 @@
 .session-form-cont{
     width: 400px;
-    height: fit-content;
+    height: 900px;
     margin: auto;
     background-color: white;
     margin-top: 50px;
@@ -41,7 +41,7 @@
     margin-bottom: 8px;
     font-weight: 700;
     text-transform: uppercase;
-    font-family: 'Arvo', serif;
+    font-family: sans-serif;
 }
 
 .title-link {
@@ -156,13 +156,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Arvo', serif;
+    font-family: sans-serif;
     padding-top: 30px;
     font-weight: 600;
 }
 
 .orange-link {
-    font-family: 'Arvo', serif;
+    font-family: sans-serif;
     color: #CC6600;
     text-decoration: none;
     cursor: pointer;

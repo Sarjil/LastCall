@@ -11,7 +11,7 @@ input[type=search]{
     position: relative;
     display: flex;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5em;
 }
 
 .search-btn{
@@ -20,14 +20,18 @@ input[type=search]{
     background-color: #FFCC00;
     margin: 0 auto;
     width: 100%;
-    max-width: 100px;
+    max-width: 6.25em;
     text-align: center;
     display: block;
     padding: 12px 0;
     color: white;
     font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 0.625em;
+    margin-bottom: 1.875em;
+}
+
+.search-bar:focus{
+    outline:none; 
 }
 
 .search-icon {
@@ -35,17 +39,18 @@ input[type=search]{
     background-image: image_url("Search-icon.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    padding-right: 5px;
+    width: 4em;
+    height: 4em;
+    margin: 0.5em;
+    padding-right: 0.3125em;
     border-right: #ddd solid 1px
+    opacity($color: #808080)
 }
 
 .ratings-badges{
     position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .ratings-imgs{
@@ -53,45 +58,72 @@ input[type=search]{
     background-image: image_url("ratings.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 360px;
-    height: 270px;
-    margin: 8px;
-    padding-right: 5px;
-    border-right: #ddd solid 1px
+    width: 22.5em;
+    height: 16.875em;
+    margin: 0.5em;
+    padding-right: 0.3125em;
+    border-right: #ddd solid 1px;
+    border-left: #ddd solid 1px;
 }
 
+.ratings-spacer{
+    padding-left: 13.4375em;
+}
+
+.ratings-spacer1{
+    padding-left: 13.9925em;
+    padding-right: 3.125em;
+}
+
+.ratings-spacer2{
+    padding-left: 19.0625em;
+}
+
+.ratings-spacer3{
+    padding-left: 7.1875em;
+}
+.ratings-spacer4{
+    padding-left: 5.3125em;
+}
 .badges-imgs{
     display: flex;
     background-image: image_url("badges.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 360px;
-    height: 270px;
-    margin: 8px;
-    padding-right: 5px;
-    border-right: #ddd solid 1px
+    width: 22.5em;
+    height: 16.875em;
+    margin: 0.5em;
+    padding-right: 0.3125em;
+    border-right: #ddd solid 1px;
+    border-left: #ddd solid 1px;
 }
 
 .ratings-badges-bold-txt{
     position: relative;
     display: flex;
-    justify-content: space-evenly;
-    font-family: 'Arvo', serif;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 0.75em;
 }
 
 .ratings-badges-plain-txt{
     position: relative;
     display: flex;
-    justify-content: space-evenly;
-    font-family: 'Arvo', serif;
+    justify-content: center;
+    font-family: sans-serif;
     font-size: 1.3em;
     line-height: 1.4em;
     box-sizing: inherit;
-    margin-top: -20px;
+    margin-top: -1.25em;
+    font-size: 1.25em;
 }
 
 
 .search-bar-container{
     // display: flex;
     position: relative;
+}
+
+.keep-track{
+    padding-left: 0.9375em;
 }

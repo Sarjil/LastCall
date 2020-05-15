@@ -5,18 +5,19 @@
 .account{
   position: relative;
   text-align: right;
-  margin-right: 15px;
-  padding: 15px 35px;
+  margin-right: 0.9735em;
+  padding: 0.9735em 2.1875em;
   background-color: transparent;
   border: 2px solid white;
   color: #fff;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 0.25em;
   font-weight: 400;
-  top: 10px;
+  top: 0.625em;
   outline: none;
   text-transform: uppercase;
 }
+
 .logout-account{
   position: relative;
   text-align: right;
@@ -45,33 +46,32 @@
 
 .homepage-cont{
     display: flex;
-    position: relative;
+    position: absolute;
     flex-direction: column;
     justify-content: space-between;
     height: fit-content;
     object-fit: contain;
-    max-height: 755px;
-    min-height: 11%;
+    max-height: 77.1875em;
+    // min-height: 11%;
     width: 100%;
+    height: auto;
     background: image_url("beer-background2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     margin-left: auto;
-    margin-right: auto;
-    // bottom: 50px;
+
 }
 
-// .homepage-add-containers{
-//     min-height: 755px;
-// }
 
 .masthead-img{
     display: flex;
     position: relative;
-    max-width: 30%;
+    width: auto;
+    max-width: 34%;
+    height: auto;
     // left: 960px;
-    // top: 46px; 
+    top: 2.2875em; 
     // margin-bottom: 56px;
     
 }
@@ -80,10 +80,10 @@
     position: relative;
     display: flex;
     // justify-content: center;
-    height: 355px;
+    height: 22.1875em;
     max-width: 20%;
-    bottom: 20px;
-    left: 120px;
+    bottom: 1.25em;
+    left: 7.5em;
 }
 
 .homepage-imgs{
@@ -102,7 +102,7 @@
     color: white;
     font-size: 50;
     font-weight: 700;
-    font-family: 'Arvo', serif;
+    font-family: sans-serif;
     bottom: 325px;
     left: 23%;
 }
@@ -115,8 +115,9 @@
 }
 
 .homepage-second-sect{
+    background-color: white;
     position: relative;
-    margin-top: 135px;
+    margin-top: 8.4375em;
     box-sizing: initial;
     float: left;
     clear: both;
@@ -129,7 +130,7 @@
    float: left;   
    clear: both;
    z-index: 10;
- 
+   max-height: 47.1875em;
     
 }
 

@@ -7,17 +7,15 @@
 }
 
 .phone-map{
-    position: relative;
     display: flex;
-    vertical-align: middle;
     background-image: image_url("phone-map.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 300px;
-    height: 534px;
-    margin: 8px;
-    padding-right: 5px;
-    right: -355px;
+    width: 30%;
+    height: 34.375em;
+    margin: 0.5em;
+    padding-right: 0.3125em;
+    // right: -17.1875em;
       
 }
 
@@ -37,7 +35,7 @@
 .phone-map-table{
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     box-sizing: inherit;
     // justify-content: center;
@@ -45,8 +43,9 @@
 
 .explore-bars{
     position: relative;
-    // display: flex;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    // vertical-align: middle;
     top: 50%;
 
     // width: 40%;
@@ -54,7 +53,14 @@
 }
 
 .explore-bars-p{
-    font-size: 20.8x;
+    font-size: 40.8px;
+    margin-block-start: -0.83em;
+    margin-block-end: 0.83em;
+}
+
+.explore-p{
+    margin-block-start: -0.83em;
+    margin-block-end: 0.83em;
 }
 
 .space-out{
