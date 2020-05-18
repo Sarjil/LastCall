@@ -1,14 +1,17 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-import Header from '../header/header'
 
-class Feed extends React.Component{
+class CheckinsIndex extends React.Component{
     constructor(props){
         super(props);
     }
 
+    // componentDidMount(){
+    //     this.props.fetchAllCheckins();
+    // }
+
     render(){
-        const {user,logout} = this.props; 
+        // if(Object.keys(this.props.checkins).length === 0) return null; 
+        // const allCheckins = Object.keys(this.props.checkins);
 
         return(
             <div className="beer-index beer-form-outer">
@@ -21,8 +24,10 @@ class Feed extends React.Component{
                     <span> CLICK HERE TO</span> <a href=""> "COMMENT"</a>
                 </div>
             </div>
+
+            
         )
     }
 }
 
-export default Feed;   
+export default CheckinsIndex;   

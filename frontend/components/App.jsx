@@ -4,7 +4,7 @@ import HomePageContainer from './homepage/homepage_container'
 import {Route, Switch} from 'react-router-dom'
 import SignInContainer from './session/signin_container'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
-import FeedContainer from './feed/feed_container';
+import CheckinContainer from './checkins/checkin_index_container';
 import HeaderContainer from './header/header_container'
 import BreweriesIndexContainer from './breweries/breweries_index_container'
 import BreweriesShowContainer from './breweries/breweries_show_container'
@@ -28,7 +28,7 @@ const App = () =>(
 
             <ProtectedRoute path='/' component={HeaderContainer} />   
             <Switch> 
-                <ProtectedRoute path='/feed' component={FeedContainer} />   
+                <ProtectedRoute path='/thepub' component={CheckinContainer} />   
                 <ProtectedRoute path='/beers/new' component={AddBeerContainer} />   
                 <ProtectedRoute path='/breweries/new' component={AddBreweryContainer} />   
                 <Route exact path='/breweries/:breweryId' component={BreweriesShowContainer} />   

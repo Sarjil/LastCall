@@ -29,7 +29,7 @@ class BreweryBeerIndex extends React.Component{
         } 
 
     return (
-        <div className="index-feed">
+        <div className="index-checkin">
             <div className="index-title">Beers</div>
             <div className="index-body">
                 <ul>{beers}</ul>

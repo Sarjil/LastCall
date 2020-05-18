@@ -1,26 +1,49 @@
-class Api::CheckInsController < ApplicationController
+class Api::CheckinsController < ApplicationController
 
     def index
-       @checkins = CheckIn.all 
+       @checkins = Checkin.all 
        render :index
     end
 
     def show
-        @checkin = CheckIn.find(params[:id])
+        @checkin = Checkin.find(params[:id])
         render :show
     end
 
     def create
-        #create checkins goes here
+        @checkin = Checkin.new(checkin_params)
+        if @checkin.save
+            render :show
+        else
+            render json: @checkin.errors.full_messages, status: 422
+        end
     end
 
     def update
-        #update checkins goes here
+        @checkin = Checkin.find(params[:id])
+        if @checkin && @checkin.update_attributes(checkin)
+            render :show
+        elsif !@checkin
+            render json: ['Could not find checkin'], status: 400
+        else
+            render json: @checkin.errors.full_messages, status: 401
+        end
     end
 
     def destroy
-        #destroy checkins goes here
-    end 
+        @checkin = Checkin.find(params[:id])
+        if @checkin && @checkin.destroy
+          render :show
+        else
+         render json: ["There is no checkin to delete."], status: 404
+        end
+    end
+
+    private
+
+    def checkin_params
+        params.require(:checkin).permit(:author_id, :beer_id, :body)
+    end
 
 
 end

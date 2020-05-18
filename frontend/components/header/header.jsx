@@ -5,7 +5,7 @@ const Header = props => {
      
     return(
     
-    <header className="feed-main-header nav-bar"> 
+    <header className="checkin-main-header nav-bar"> 
 
         <div className="header-links"> 
         
@@ -18,7 +18,7 @@ const Header = props => {
 
 
             <div className="header-pub-div">
-                <Link className="header-link" to='/feed'>The Pub</Link>
+                <Link className="header-link" to='/thepub'>The Pub</Link>
             </div>
 
             <div className="header-breweries-div">

@@ -9,7 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class CheckIn < ApplicationRecord
+class Checkin < ApplicationRecord
     validates :author_id, :beer_id, presence: true 
 
     # belongs_to :beer_id

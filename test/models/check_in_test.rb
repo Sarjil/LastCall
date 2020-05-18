@@ -11,7 +11,7 @@
 #
 require 'test_helper'
 
-class CheckInTest < ActiveSupport::TestCase
+class CheckinTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
