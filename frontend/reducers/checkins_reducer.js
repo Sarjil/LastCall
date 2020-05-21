@@ -13,12 +13,12 @@ const checkinsReducer = (oldState={}, action)=>{
         case RECEIVE_CHECKIN:
             return Object.assign({}, oldState, {[action.id]: action.checkin})
         case REMOVE_CHECKIN:
-            delete nextState[action.checkinId];
+            delete nextState[action.checkinId.id];
             return nextState;
-        case RECEIVE_BEER:
-            return action.payload.checkins || {};
-        case RECEIVE_BREWERY:
-            return action.payload.checkins || {};
+        // case RECEIVE_BEER:
+        //     return action.checkins || {};
+        // case RECEIVE_BREWERY:
+        //     return action.checkins || {};
         case RECEIVE_USER:
             return action.payload.user || {};
         default: 

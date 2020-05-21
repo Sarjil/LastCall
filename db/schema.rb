@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_10_183537) do
+ActiveRecord::Schema.define(version: 2020_05_19_202819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,13 +56,13 @@ ActiveRecord::Schema.define(version: 2020_04_10_183537) do
     t.index ["name"], name: "index_breweries_on_name"
   end
 
-  create_table "check_ins", force: :cascade do |t|
+  create_table "checkins", force: :cascade do |t|
     t.integer "author_id", null: false
     t.integer "beer_id", null: false
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id", "beer_id"], name: "index_check_ins_on_author_id_and_beer_id"
+    t.index ["author_id", "beer_id"], name: "index_checkins_on_author_id_and_beer_id"
   end
 
   create_table "comments", force: :cascade do |t|

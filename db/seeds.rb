@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
+Checkin.destroy_all 
 Beer.destroy_all
 Brewery.destroy_all
 User.destroy_all
@@ -21,7 +22,6 @@ user5 = User.create!(username:"Hoptastic", email:"hop@hop.com", password:"passwo
 user6 = User.create!(username:"YumBeer", email:"mmmburrr@netscape.net", password:"password")
 
 #Breweries
-
 stone = Brewery.create!(name:"Stone Brewing Co.", location:"Escondido, California", description:" Stone Brewing is a brewery headquartered in Escondido, California, USA. Founded in 1996 in San Marcos, California, it is the largest brewery in Southern California. Based on 2016 sales volume it is the eighth largest craft brewery in the United States. ")
 alchemist = Brewery.create!(name:"The Alchemist", location:"Stowe,Vermont", description:"The Alchemist is a family run brewery specializing in fresh, unfiltered IPA. John and Jen Kimmich originally opened The Alchemist as a 60 seat brew pub in the village of Waterbury in 2003. After eight years of success and growing popularity, they decided to open a small seedsuction brewery. Today The Alchemist currently operates two breweries in Vermont and distributes Heady Topper and Focal Banger throughout the state.")
 samadams = Brewery.create!(name:"Samuel Adams Boston Brewery ", location:"Boston, Massachussets", description:"Well-known brewery with a long history lures locals & visitors with tours, tastings & a gift shop.")
@@ -29,7 +29,6 @@ bluepoint = Brewery.create!(name:"Blue Point", location:"Patchogue, NY", descrip
 singlecut = Brewery.create!(name:"SingleCut Beersmiths", location:"Queens, NY", description:"Brewing all beers on site, this taproom offers live music, outdoor seating, and facility tours")
 hill  = Brewery.create!(name:"Hill Farmstead Brewery", location:"Greensboro, VT", description:"Microbrewery shop offering bottles & growlers of its rustic farmhouse ales, plus tastings ")
 whiteclaw  = Brewery.create!(name:"White Claw", location:"USA", description:"White Claw Hard Seltzer is an alcoholic seltzer water beverage owned by Mark Anthony Brands. The beverage was introduced in 2016 It is sold under nine different 100-calorie, 5% ABV flavors that include Black Cherry, Ruby Grapefruit, Natural Lime, Raspberry, Mango, Lemon, Tangerine, Watermelon and Pure Hard Seltzer.")
-#   = Brewery.create!(name:" ", location:" ", description:" ")
 #   = Brewery.create!(name:" ", location:" ", description:" ")
 
 
@@ -42,11 +41,6 @@ bluepoint.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/bluepoi
 singlecut.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/singluecutlogo.png'), filename: 'singluecutlogo.png')
 hill.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/hill.png'), filename: 'hill.png')
 whiteclaw.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/whiteclaw.png'), filename: 'whiteclaw.png')
-
-
-
-
-
 
 #Beers
 stone1 = Beer.create!(name: "Stone IPA", brewery_id: stone.id , style:"IPA", abv:"6.9%", description:"By definition, an India pale ale is hoppier and higher in alcohol than its little brother, pale ale—and we deliver in spades. One of the most well-respected and best-selling IPAs in the country, this golden beauty explodes with tropical, citrusy, piney hop flavors and aromas, all perfectly balanced by a subtle malt character. This crisp, extra hoppy brew is hugely refreshing on a hot day, but will always deliver no matter when you choose to drink it.")
@@ -70,14 +64,12 @@ sam1.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/bostonlager.
 sam2.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/octoberfest.jpg'), filename: 'octoberfest.jpg')
 sam3.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/cherrywheat.jpeg'), filename: 'cherrywheat.jpeg')
 
-
 bluepoint1 = Beer.create!(name: "Toasted Lager", brewery_id: bluepoint.id , style:"Lager", abv:"5.5%", description:"Toasted Lager was originally named for the “toasted” characteristics of our original direct-fire brick kettle. Our World Beer Cup gold medal winning flagship brew is brewed with a blend of six specialty malts for a flavor as rich and unique as the town it’s from. Toasted Lager’s balanced flavor of malt and hops makes for easy drinking and our special proprietary lager yeast seedsuces an exceptional, long-lasting smooth finish.")
 bluepoint2 = Beer.create!(name: "Imperial Sunhine", brewery_id: bluepoint.id , style:"Blonde Ale", abv:"9.6%", description:"Our Imperial Sunshine is a bright, refreshing brew with a `bit of punch` - not for the faint hearted. Brewed with orange peel, this strong blonde ale packs a nose reminiscent of orange Tic Tacs, hard candy and our favorite non-alcoholic drink, Tang. But don't get it twisted... the drinkability on this one will have you waking up wondering how you lost your shoe. Enjoy the trip!")
 bluepoint3 = Beer.create!(name: "Hoptical Illusion", brewery_id: bluepoint.id , style:"IPA", abv:"7.0%", description:"Plenty of hops are added to this brew in 5 different ways, which allows the “Essence of the Hop” to burst through and give that signature resiny, citrus-filled flavor for which Hoptical Illusion is known. This award-winning IPA is truly a hop lover’s dream.")
 bluepoint1.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/toasted_lager.png'), filename: 'toasted_lager.png')
 bluepoint2.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/imperial_sunshine.png'), filename: 'imperial_sunshine.png')
 bluepoint3.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/hoptical_illusion.png'), filename: 'hoptical_illusion.png')
-
 
 singlecut1 = Beer.create!(name: "Jan Alpine White Lager", brewery_id: singlecut.id , style:"Lager", abv:"5.2%", description:"THE OLFACTORY IS working overtime, noting the distinct sweet citrus, delicate flowery herbal and complex citrus spice aromas and flavors of this lager. Smooth soft light malt, finishes very dry and clean with an orange zest bitterness. Perhaps our ultimate patio brew.")
 singlecut2 = Beer.create!(name: "ERIC MORE COWBELL! CHOCOLATE MILK STOUT NITRO", brewery_id: singlecut.id , style:"Stout", abv:"6.0%", description:"WE’VE GOT A FEVER – And there is only one cure: a lusciously creamy, slightly sweet Stout that sits atop a roast malt base and huge cocoa infusion that will rock all night long.")
@@ -90,9 +82,7 @@ singlecut3.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/halfst
 singlecut4.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/kimhibiscus.png'), filename: 'kimhibiscus.png')
 singlecut5.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/weirdgilly.png'), filename: 'weirdgilly.png')
 
-
 hill1 = Beer.create!(name: "Amarillo Single Hop IPA", brewery_id: hill.id, style:"IPA", abv:"6.0%", description:"Single Hop India Pale Ale with Amarillo")
-
 
 whiteclaw1 = Beer.create!(name: "Pure", brewery_id: whiteclaw.id, style:"Hard Seltzer", abv:"5%", description:"Crisp Pure Hard Seltzer")
 whiteclaw2 = Beer.create!(name: "Lemon", brewery_id: whiteclaw.id, style:"Hard Seltzer", abv:"5%", description:"Crisp Lemon Flavored Hard Seltzer")
@@ -112,9 +102,13 @@ whiteclaw6.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/tanger
 whiteclaw7.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/lime.png'), filename: 'lime.png')
 whiteclaw8.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/grapefruit.png'), filename: 'grapefruit.png')
 whiteclaw9.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/raspberry.png'), filename: 'raspberry.png')
+#  = Beer.create!(name: "", brewery_id: , style:"", abv:"", description:"")
 
 
-#  = Beer.create!(name: "", brewery_id: , style:"", abv:"", description:"")
-#  = Beer.create!(name: "", brewery_id: , style:"", abv:"", description:"")
-#  = Beer.create!(name: "", brewery_id: , style:"", abv:"", description:"")
-#  = Beer.create!(name: "", brewery_id: , style:"", abv:"", description:"")
+#checkins 
+checkin1 = Checkin.create!(author_id: demoUser.id, beer_id: singlecut1.id, body: "I love this beer!"); 
+checkin2 = Checkin.create!(author_id: user1.id, beer_id: whiteclaw2.id, body: "Best hard seltzer on the market"); 
+checkin3 = Checkin.create!(author_id: user2.id, beer_id: bluepoint3.id, body: "Hoptastic!"); 
+checkin4 = Checkin.create!(author_id: user3.id, beer_id: alchemist1.id, body: "Always pick up a case when im in Stowe, VT!"); 
+checkin5 = Checkin.create!(author_id: user4.id, beer_id: stone1.id, body: "Very flavorful"); 
+checkin6 = Checkin.create!(author_id: user5.id, beer_id: sam1.id, body: "Americas beer! "); 

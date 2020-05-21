@@ -27,11 +27,15 @@ const removeCheckin = checkinId => ({
 
 
 export const fetchAllCheckins = () => dispatch => (
-    CheckinApi.fetchAllCheckins().then( checkins => dispatch(receiveAllCheckins(checkins)))
+    CheckinApi.fetchAllCheckins().then(checkins => dispatch(receiveAllCheckins(checkins)), errors => {
+        return dispatch(receiveCheckinErrors(errors))
+    })
 )
 
 export const fetchCheckin = (checkinId) => dispatch => (
-    CheckinApi.fetchAllCheckins(checkinId).then( checkin => dispatch(receiveCheckin(checkin)))
+    CheckinApi.fetchAllCheckins(checkinId).then(checkin => dispatch(receiveCheckin(checkin)), errors => {
+        return dispatch(receiveCheckinErrors(errors))
+    })
 )
 
 export const createCheckin = data => dispatch => (
