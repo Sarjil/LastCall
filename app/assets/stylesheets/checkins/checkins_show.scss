@@ -1,0 +1,158 @@
+.checkin-show-photo {
+  width: 40%;
+  position: absolute;
+  right: 20px;
+  top: 100px;
+}
+
+.checkin-show-main {
+  max-width: 1048px;
+  min-width: 320px;
+  width: 100%;
+  margin: 28px 0 20px;
+  position: relative;
+  margin-left: 10%;
+}
+
+.checkin-show-container {
+  padding-top: 52px;
+  width: 100%;
+  position: absolute;
+}
+
+.checkin-show-info {
+  display: contents;
+}
+
+.checkin-show-top {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+.upper-mid {
+  display: flex;
+  align-items: center;
+}
+
+.checkin-show-mid {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 10px;
+}
+
+.checkin-show-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkin-author-name {
+  margin-left: 20px;
+}
+
+.inner-checkin-show {
+  background-color: #fff;
+  width: 44%;
+  padding-top: 12px;
+  // position: relative;
+}
+
+.checkin-show-pic {
+  height: 50px;
+  width: 50px;
+  margin-left: 5px;
+  margin-right: 16px;
+}
+
+.show-rating {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.checkin-brewery-name {
+  font-size: 14px;
+  color: #666666;
+}
+
+.checkin-beer-name {
+  font-size: 18px;
+}
+
+.checkin-show-date {
+  padding: 16px;
+  font-size: 12px;
+  color: #A9A9A9;
+}
+
+.checkin-show-delete {
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+#no-picture{
+  margin-left: 25%;
+}
+
+.black-link:hover {
+  color: #CC6600;
+}
+
+.return {
+  text-align: center;
+  font-size: 10px;
+}
+
+.checkin-body-show {
+  margin-top: 10px;
+  color: #999999;
+  padding: 5px;
+  width: 70%;
+}
+
+.checkin-show-socials {
+  height: 70%;
+  background-color: #FFFFFF;
+  margin: 10px 0 30px;
+  width: 44%;
+  max-width: 60%;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.toast-show {
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.checkin-show-button {
+  background-color: #A7A7A7;
+  font-size: 12px;
+  width: 50px;
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  color: white;
+  font-weight: 600;
+}
+
+.toasts-show {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  background-color: #F9F9F9;
+  overflow: hidden;
+}
+
+.toast-count-show {
+  border-right: 1px solid #E2E2E2;
+  padding: 0 8px;
+  margin-right: 5px;
+}
+
+.no-toasts {
+  margin-left: 20%;
+  width: 100%;
+}

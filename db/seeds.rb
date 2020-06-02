@@ -21,6 +21,7 @@ user4 = User.create!(username:"CoorsLite4Lyfe", email:"coorsfan@coors.com", pass
 user5 = User.create!(username:"Hoptastic", email:"hop@hop.com", password:"password")
 user6 = User.create!(username:"YumBeer", email:"mmmburrr@netscape.net", password:"password")
 
+
 #Breweries
 stone = Brewery.create!(name:"Stone Brewing Co.", location:"Escondido, California", description:" Stone Brewing is a brewery headquartered in Escondido, California, USA. Founded in 1996 in San Marcos, California, it is the largest brewery in Southern California. Based on 2016 sales volume it is the eighth largest craft brewery in the United States. ")
 alchemist = Brewery.create!(name:"The Alchemist", location:"Stowe,Vermont", description:"The Alchemist is a family run brewery specializing in fresh, unfiltered IPA. John and Jen Kimmich originally opened The Alchemist as a 60 seat brew pub in the village of Waterbury in 2003. After eight years of success and growing popularity, they decided to open a small seedsuction brewery. Today The Alchemist currently operates two breweries in Vermont and distributes Heady Topper and Focal Banger throughout the state.")
@@ -104,7 +105,6 @@ whiteclaw8.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/grapef
 whiteclaw9.photo.attach(io: open('https://lastcall-seeds.s3.amazonaws.com/raspberry.png'), filename: 'raspberry.png')
 #  = Beer.create!(name: "", brewery_id: , style:"", abv:"", description:"")
 
-
 #checkins 
 checkin1 = Checkin.create!(author_id: demoUser.id, beer_id: singlecut1.id, body: "I love this beer!"); 
 checkin2 = Checkin.create!(author_id: user1.id, beer_id: whiteclaw2.id, body: "Best hard seltzer on the market"); 
@@ -112,3 +112,4 @@ checkin3 = Checkin.create!(author_id: user2.id, beer_id: bluepoint3.id, body: "H
 checkin4 = Checkin.create!(author_id: user3.id, beer_id: alchemist1.id, body: "Always pick up a case when im in Stowe, VT!"); 
 checkin5 = Checkin.create!(author_id: user4.id, beer_id: stone1.id, body: "Very flavorful"); 
 checkin6 = Checkin.create!(author_id: user5.id, beer_id: sam1.id, body: "Americas beer! "); 
+

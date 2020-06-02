@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: check_ins
+# Table name: checkins
 #
 #  id         :bigint           not null, primary key
 #  author_id  :integer          not null
@@ -16,4 +16,9 @@ class Checkin < ApplicationRecord
     belongs_to :author,
         foreign_key: :author_id,
         class_name: :User
+
+    def self.order_by
+        Checkin.order('created_at DESC').all
+    end
+    
 end

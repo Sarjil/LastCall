@@ -15,6 +15,7 @@ import AddBreweryContainer from './breweries/add_brewery_container'
 import BeerEditContainer from './beers/beer_edit_container'
 import BreweriesBeerContainer from './breweries/breweries_beer_container'
 import BreweryEditContainer from './breweries/edit_brewery_container'
+import AddCheckinContainer from './checkins/add_checkin_container'
 
 const App = () =>(
     <div className="protected-routes">
@@ -29,6 +30,7 @@ const App = () =>(
             <ProtectedRoute path='/' component={HeaderContainer} />   
             <Switch> 
                 <ProtectedRoute path='/thepub' component={CheckinContainer} />   
+                <ProtectedRoute path='/checkin' component={AddCheckinContainer} />   
                 <ProtectedRoute path='/beers/new' component={AddBeerContainer} />   
                 <ProtectedRoute path='/breweries/new' component={AddBreweryContainer} />   
                 <Route exact path='/breweries/:breweryId' component={BreweriesShowContainer} />   

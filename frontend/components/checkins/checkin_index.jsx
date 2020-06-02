@@ -1,32 +1,49 @@
 import React from 'react';
+import CheckinsIndexItem from './checkin_index_item';
+import { Link } from 'react-router-dom'
 
 class CheckinsIndex extends React.Component{
     constructor(props){
         super(props);
     }
 
-    // componentDidMount(){
-    //     this.props.fetchAllCheckins();
-    // }
+    componentDidMount(){
+        this.props.fetchAllCheckins();
+    }
 
     render(){
-        // if(Object.keys(this.props.checkins).length === 0) return null; 
-        // const allCheckins = Object.keys(this.props.checkins);
+        if(Object.keys(this.props.checkins).length === 0) return null; 
+        const allCheckins = Object.keys(this.props.checkins);
+        // debugger 
 
-        return(
-            <div className="beer-index beer-form-outer">
+        const checkinsLis = allCheckins.map(id => {
+            const checkin = this.props.checkins[id];
 
-                <div className="beer-index-title"> FEED GOES HERE.....eventually </div>
-                <div className="beer-indx-body">
-                    <p> BEERLOVER.USERNAME DRANK AN AWESOME BEER ON THIS DATE</p>
-                    <span> CLICK HERE TO</span> <a href="">"TOAST"</a>  
-                    <p></p>
-                    <span> CLICK HERE TO</span> <a href=""> "COMMENT"</a>
-                </div>
+            return(
+                <CheckinsIndexItem
+                    key={`${checkin.id}${checkin.body}`}
+                    checkin={checkin}
+                    toasts={this.props.toasts}
+                    fetchCheckin={this.props.fetchCheckin}
+                    deleteCheckin={this.props.deleteCheckin}
+                    currentUserId={this.props.currentUserId}
+               />) 
+       }).reverse();
+        
+       return(
+        <div className="beer-index">
+
+            <div className="checkin-index-title">
+                <p>  Recent Global Activity </p>
+                <Link className="orange-link" to='/checkin'> Create Checkin </Link>
             </div>
 
             
-        )
+            <div className="index-body">
+                <ul>{checkinsLis}</ul>
+            </div>
+        </div>
+       )
     }
 }
 

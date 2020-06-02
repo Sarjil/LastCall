@@ -1,0 +1,173 @@
+.outer-checkin-item {
+  display: flex;
+  margin: 20px 10px 20px 10px;
+  border-bottom: solid 1px #EEEEEE;
+  position: relative;
+  word-break: break-word;
+  background-color: white;
+//   width: 50%;
+  justify-content: center;
+}
+
+.checkin-index-title {
+  width: auto;
+  height: 40px;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-weight: 900;
+  font-size: 20px;
+  border-bottom: 1px solid #E2E2E2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.upper-checkin-content {
+  display: flex;
+  color: #000000;
+}
+
+.checkin-main {
+  color: #999999;
+  width: 100%;
+  height: 40%;
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+.checkin-bottom {
+  display: inline-block;
+  margin: 15px 10px 20px 0;
+  font-size: 12px;
+  width: 100%;
+}
+
+.checkin-user-pic {
+  height: 52px;
+  width: 52px;
+}
+
+.checkin-beer-pic {
+  height: 72px;
+  width: 92px;
+  margin-left: 20px;
+}
+
+.checkin-info {
+  display: -webkit-inline-box;
+}
+
+.checkin-rating-body {
+  height: fit-content;
+  border: 1px solid #EEEEEE;
+  margin-top: 10px;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.checkin-photo-container {
+  width: 100%;
+  max-height: 240px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.checkin-photo {
+  margin: -25% 0;
+  width: 100%;
+}
+
+.date-posted {
+  margin-right: 10px;
+}
+
+.checkin-show {
+  margin-right: 15px;
+}
+
+.checkin-rating {
+  padding-top: 10px;
+}
+
+.cap {
+  height: 20px;
+  width: 20px;;
+}
+
+.toasts-index {
+  margin: 10px 0;
+  background-color: #F9F9F9;
+  padding: 2px;
+}
+
+.toast-count, .toast-imgs {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.toast-count > i {
+  color: #FDD760;
+  border-right: 1px solid #E2E2E2;
+  padding-right: 10px;
+}
+
+.toast-item {
+  margin: auto;
+  padding: 3px;
+  font-size: 18px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.toast-index {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  padding: none;
+}
+
+.checkin-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.checkin-body-index {
+  border-radius: 4px;
+  border-color: #D6D6D6;
+  padding: 5px;
+}
+
+.checkin-button {
+  background-color: #A7A7A7;
+  font-size: 12px;
+  width: 45%;
+  border: none;
+  border-radius: 6px;
+  display: inline-block;
+  font-family: inherit;
+  padding: 5px 0;
+  color: white;
+  font-weight: 600;
+}
+
+.checkin-button:hover {
+  background-color: #858787;
+}
+
+.toasted {
+  background-color: #FFCC00;
+  color: #ffffff;
+}
+
+.toasted:hover {
+  background-color: #FFCC00;
+}
+
+.btn-icon {
+  padding-right: 5px;
+}
+
+.beer-pic-container{
+    // width: 50%
+}

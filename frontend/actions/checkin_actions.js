@@ -1,4 +1,4 @@
-import * as CheckinApi from '../util/checkin.util'
+import * as CheckinApi from '../util/checkin_util'
 
 export const RECEIVE_ALL_CHECKINS = "RECEIVE_ALL_CHECKINS";
 export const RECEIVE_CHECKIN = "RECEIVE_CHECKIN";
@@ -38,7 +38,7 @@ export const fetchCheckin = (checkinId) => dispatch => (
     })
 )
 
-export const createCheckin = data => dispatch => (
+export const createCheckin = (data) => dispatch => (
     CheckinApi.createCheckin(data).then( checkin => dispatch(receiveCheckin(checkin)), errors => { 
         return dispatch(receiveCheckinErrors(errors))
     })

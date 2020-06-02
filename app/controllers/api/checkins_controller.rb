@@ -1,7 +1,7 @@
 class Api::CheckinsController < ApplicationController
 
     def index
-       @checkins = Checkin.all 
+       @checkins = Checkin.includes(:beer, :author).order(created_at: :desc).all 
        render :index
     end
 
@@ -10,18 +10,18 @@ class Api::CheckinsController < ApplicationController
         render :show
     end
 
-    def create
-        @checkin = Checkin.new(checkin_params)
-        if @checkin.save
-            render :show
-        else
-            render json: @checkin.errors.full_messages, status: 422
-        end
+  def create
+    @checkin = Checkin.new(checkin_params)
+    if @checkin.save
+      render :show
+    else
+      render json: @checkin.errors.full_messages, status: 422
     end
+  end
 
     def update
         @checkin = Checkin.find(params[:id])
-        if @checkin && @checkin.update_attributes(checkin)
+        if @checkin && @checkin.update_attributes(checkin_params)
             render :show
         elsif !@checkin
             render json: ['Could not find checkin'], status: 400
@@ -39,11 +39,11 @@ class Api::CheckinsController < ApplicationController
         end
     end
 
-    private
+private
 
-    def checkin_params
-        params.require(:checkins).permit(:author_id, :beer_id, :body)
-    end
+  def checkin_params
+    params.require(:checkin).permit(:author_id, :body, :beer_id)
+  end
 
 
 end
