@@ -12,13 +12,13 @@
 class Checkin < ApplicationRecord
     validates :author_id, :beer_id, presence: true 
 
+    has_many :toasts
+    has_many :comments
+    
     belongs_to :beer
     belongs_to :author,
         foreign_key: :author_id,
         class_name: :User
 
-    def self.order_by
-        Checkin.order('created_at DESC').all
-    end
-    
+   
 end

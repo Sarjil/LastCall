@@ -9,6 +9,7 @@ class CheckinsIndex extends React.Component{
 
     componentDidMount(){
         this.props.fetchAllCheckins();
+        this.props.fetchAllToasts();
     }
 
     render(){
@@ -24,6 +25,8 @@ class CheckinsIndex extends React.Component{
                     key={`${checkin.id}${checkin.body}`}
                     checkin={checkin}
                     toasts={this.props.toasts}
+                    createToast={this.props.createToast}
+                    deleteToast={this.props.deleteToast}
                     fetchCheckin={this.props.fetchCheckin}
                     deleteCheckin={this.props.deleteCheckin}
                     currentUserId={this.props.currentUserId}

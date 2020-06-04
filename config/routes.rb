@@ -9,5 +9,6 @@ Rails.application.routes.draw do
       resources :beers, only:[:index, :show, :create, :update]
       resources :checkins, only:[:index, :show, :create, :update, :destroy]
       resources :comments, only:[:update, :create, :destroy]
+      resources :toasts, only: [:index, :create, :destroy]
   end
 end

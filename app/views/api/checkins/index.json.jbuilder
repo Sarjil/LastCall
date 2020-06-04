@@ -9,5 +9,6 @@
     json.breweryName checkin.beer.brewery.name
     json.authorId checkin.author_id
     json.authorName checkin.author.username
+    json.toastIds checkin.toast_ids
   end
 end

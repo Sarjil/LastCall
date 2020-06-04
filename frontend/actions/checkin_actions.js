@@ -1,57 +1,70 @@
 import * as CheckinApi from '../util/checkin_util'
 
 export const RECEIVE_ALL_CHECKINS = "RECEIVE_ALL_CHECKINS";
+export const RECEIVE_CHECKIN_ERRORS = "RECEIVE_CHECKIN_ERRORS";
 export const RECEIVE_CHECKIN = "RECEIVE_CHECKIN";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const REMOVE_CHECKIN = "REMOVE_CHECKIN";
 
-const receiveAllCheckins = checkins => ({
-    type: RECEIVE_ALL_CHECKINS,
-    checkins
-});
+const receiveAllCheckins = checkins => {
+    return {
+        type: RECEIVE_ALL_CHECKINS,
+        checkins
+    };
+};
 
-const receiveCheckin = checkin => ({
-    type: RECEIVE_CHECKIN,
-    checkin
-});
+const receiveCheckin = payload => {
+    return {
+        type: RECEIVE_CHECKIN,
+        payload
+    };
+};
 
-const receiveCheckinErrors = errors => ({
-    type: RECEIVE_ERRORS,
-    errors 
-});
+const receiveCheckinErrors = errors => {
+    return {
+        type: RECEIVE_CHECKIN_ERRORS,
+        errors
+    };
+};
 
-const removeCheckin = checkinId => ({
-    type: REMOVE_CHECKIN,
-    checkinId 
-});
+const removeCheckin = checkinId => {
+    return {
+        type: REMOVE_CHECKIN,
+        checkinId
+    };
+};
 
+export const fetchAllCheckins = () => dispatch => {
+    return CheckinApi.fetchAllCheckins()
+        .then(checkins => dispatch(receiveAllCheckins(checkins)), errors => {
+            return dispatch(receiveCheckinErrors(errors))
+        });
+};
 
-export const fetchAllCheckins = () => dispatch => (
-    CheckinApi.fetchAllCheckins().then(checkins => dispatch(receiveAllCheckins(checkins)), errors => {
-        return dispatch(receiveCheckinErrors(errors))
-    })
-)
+export const fetchCheckin = checkinId => dispatch => {
+    return CheckinApi.fetchCheckin(checkinId)
+        .then(payload => dispatch(receiveCheckin(payload)), errors => {
+            return dispatch(receiveCheckinErrors(errors))
+        });
+};
 
-export const fetchCheckin = (checkinId) => dispatch => (
-    CheckinApi.fetchAllCheckins(checkinId).then(checkin => dispatch(receiveCheckin(checkin)), errors => {
-        return dispatch(receiveCheckinErrors(errors))
-    })
-)
+export const createCheckin = formData => dispatch => {
+    return CheckinApi.createCheckin(formData)
+        .then(checkin => dispatch(receiveCheckin(checkin)), errors => {
+            return dispatch(receiveCheckinErrors(errors))
+        });
+};
 
-export const createCheckin = (data) => dispatch => (
-    CheckinApi.createCheckin(data).then( checkin => dispatch(receiveCheckin(checkin)), errors => { 
-        return dispatch(receiveCheckinErrors(errors))
-    })
-)
-
-export const updateCheckin = checkinId => dispatch => (
-    CheckinApi.updateCheckin(checkinId).then( checkIn => dispatch(receiveCheckin(checkIn)), errors => {
-        return dispatch(receiveCheckinErrors(errors))
-    })
-)
+export const updateCheckin = checkin => dispatch => {
+    return CheckinApi.updateCheckin(checkin)
+        .then(checkin => dispatch(receiveCheckin(checkin)), errors => {
+            return dispatch(receiveCheckinErrors(errors))
+        });
+};
 
 export const deleteCheckin = checkinId => dispatch => {
-    CheckinApi.deleteCheckin(checkinId).then (response => dispatch(removeCheckin(response.checkin.id)), errors =>{
-        return dispatch(receiveCheckinErrors(errors))
-    })
-}
+    return CheckinApi.deleteCheckin(checkinId)
+        .then(checkinId => dispatch(removeCheckin(checkinId)), errors => {
+            return dispatch(receiveCheckinErrors(errors))
+        });
+};
+

@@ -1,7 +1,7 @@
 class Api::CheckinsController < ApplicationController
 
     def index
-       @checkins = Checkin.includes(:beer, :author).order(created_at: :desc).all 
+       @checkins = Checkin.all 
        render :index
     end
 
