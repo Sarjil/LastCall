@@ -18,6 +18,8 @@ end
       json.extract! comment, :id, :body
       json.checkinId comment.checkin_id
       json.authorId comment.author_id
+      json.authorName comment.author.username 
+      json.updatedAt comment.updated_at
      end
   end
 end

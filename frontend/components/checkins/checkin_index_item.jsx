@@ -1,14 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {formatDate} from '../../util/date_util'
+import CommentsContainer from '../comments/comments_container'
 
 
 export default class CheckinsIndexItem extends React.Component{
     constructor(props){
         super(props);
-        this.state = { toasted: false, toastIds: this.props.checkin.toastIds, currentUserToastId: null}
+        this.state = { 
+            toasted: false, 
+            toastIds: this.props.checkin.toastIds, 
+            currentUserToastId: null, 
+            commenting: false, 
+            comment: ""
+        };
         this.handleToast = this.handleToast.bind(this);
         this.checkToasted = this.checkToasted.bind(this);
+        this.handleCommentClick = this.handleCommentClick.bind(this);
+        this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     checkToasted(checkin) {
@@ -29,7 +40,8 @@ export default class CheckinsIndexItem extends React.Component{
         this.setState({
             toasted,
             currentUserToastId,
-            toastIds: checkin.toastIds
+            toastIds: checkin.toastIds,
+            commentIds: checkin.commentIds || []
         }); 
     }
 
@@ -54,6 +66,49 @@ export default class CheckinsIndexItem extends React.Component{
         }
     }
 
+    handleCommentClick(e) {
+        e.preventDefault();
+        if (this.state.commenting) {
+            this.setState({ commenting: false });
+        } else {
+            this.props.fetchCheckin(this.props.checkin.id)
+                .then(checkinAction => {
+                    this.setState({
+                        commenting: true,
+                        commentIds: checkinAction.payload.checkin.commentIds
+                    });
+                });
+        }
+    }
+
+    handleCommentSubmit(e) {
+        e.preventDefault();
+        const checkinId = this.props.checkin.id
+        const commentData = {
+            body: this.state.comment,
+            checkin_id: checkinId,
+            author_id: this.props.currentUserId
+        };
+
+        this.props.createComment(commentData)
+            .then(commentAction => this.props.fetchCheckin(commentAction.comment.checkinId))
+            .then(checkinAction => this.setState({
+                comment: "",
+                commentIds: checkinAction.payload.checkin.commentIds
+            }));
+    }
+
+    handleChange(e) {
+        this.setState({ comment: e.target.value });
+    }
+
+    handleDelete(commentId) {
+        this.props.deleteComment(commentId)
+            .then(commentAction => this.props.fetchCheckin(commentAction.comment.checkinId))
+            .then(checkinAction => this.setState({ commentIds: checkinAction.payload.checkin.commentIds }));
+    }
+
+
     componentDidMount() {
         this.checkToasted(this.props.checkin);
     }
@@ -62,7 +117,7 @@ export default class CheckinsIndexItem extends React.Component{
         
         const checkin = this.props.checkin; 
         const deleteable = checkin.authorId === this.props.currentUserId ?  <p className="orange-link" onClick={() => {
-            return this.props.deleteCheckin(checkins.id)
+            return this.props.deleteCheckin(checkin.id)
         }}>Delete Check-in</p> : null;
 
         
@@ -80,13 +135,50 @@ export default class CheckinsIndexItem extends React.Component{
         );
 
         const buttonClass = this.state.toasted ? "toasted" : "";
+        const commentText = this.state.commenting ? "Hide Comments" : "Show Comments";
 
         const buttons = (
             <section className="checkin-buttons">
-                <button className="checkin-button comment-btn"><span className="btn-icon"><i className="far fa-comment"></i></span>Comment</button>
-                <button className={`checkin-button ${buttonClass}`} onClick={this.handleToast}><span className="btn-icon"><i className="fas fa-beer"></i></span>Toast</button>
+                
+                <button className="checkin-button comment-btn" onClick={this.handleCommentClick}>
+                    <span className="btn-icon">
+                        <i className="far fa-comment"></i>
+                    </span>Comment
+                </button>
+                
+                <button className={`checkin-button ${buttonClass}`} onClick={this.handleToast}>
+                    <span className="btn-icon">
+                        <i className="fas fa-beer"></i>
+                    </span>Toast
+                </button>
+
             </section>
         );
+
+        const commentForm = !this.state.commenting ? null : (
+            <form className="new-comment" onSubmit={this.handleCommentSubmit}>
+
+                <textarea
+                    className="comment-ta"
+                    onChange={this.handleChange}
+                    value={this.state.comment}
+                    placeholder="Leave a Comment"
+                />
+                <div className="post-btn-wrap">
+                    <button className="checkin-button post-btn">Post</button>
+                </div>
+
+            </form>
+        );
+
+        const commentsSection = !this.state.commenting ? null : (
+            <CommentsContainer
+                checkin={checkin}
+                deleteComment={this.handleDelete}
+            />
+        );
+
+        const commentsClass = commentsSection ? "comment-index" : "";
 
         return (
             <div className="outer-checkin-item">
@@ -105,9 +197,7 @@ export default class CheckinsIndexItem extends React.Component{
 
                     <div className="checkin-rating-body">
                         <div className="checkin-body-index">{checkin.body}</div>
-                        <div className="checkin-rating">
-                            {/* {displayStars(checkin.rating)} */}
-                        </div>
+                       
                     </div>
                     {buttons}
                     <div className="checkin-bottom">
@@ -126,6 +216,10 @@ export default class CheckinsIndexItem extends React.Component{
                             </div>
                         </div>
                         {toastsSection}
+                        <section className={commentsClass}>
+                            {commentsSection}
+                            {commentForm}
+                        </section>
                     </div>
                 </div>
 

@@ -12,3 +12,11 @@ export const deleteComment = commentId => {
     method: "DELETE"
   });
 };
+
+export const updateComment = comment => {
+  return $.ajax({
+    url: `/api/comments/${comment.id}`,
+    method: "PATCH",
+    data: { comment }
+  });
+};

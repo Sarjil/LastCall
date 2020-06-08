@@ -2,6 +2,7 @@ import * as CommentAPI from "../util/comment_util";
 
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
+export const RECEIVE_COMMENT_ERRORS = "RECEIVE_COMMENT_ERRORS";
 
 const receiveComment = comment => {
   return {
@@ -10,28 +11,37 @@ const receiveComment = comment => {
   };
 };
 
-const removeComment = commentId => {
+const removeComment = comment => {
   return {
     type: REMOVE_COMMENT,
-    commentId
+    comment
   };
 };
 
 const receieveCommentErrors = errors => {
   return {
-    type: RECEIVE_TOAST_ERRORS,
+    type: RECEIVE_COMMENT_ERRORS,
     errors
   };
 };
 
 export const createComment = comment => dispatch => {
-  CommentAPI.createComment(comment)
-    .then(comment => dispatch(receiveComment(comment)))
-    .catch(errors => dispatch(receieveCommentErrors(errors)));
+  return CommentAPI.createComment(comment)
+    .then(comment => dispatch(receiveComment(comment)), errors => {
+      return dispatch(receieveCommentErrors(errors))
+    });
+};
+
+export const updateComment = comment => dispatch => {
+  return CommentAPI.updateComment(comment)
+    .then(comment => dispatch(receiveComment(comment)), errors => {
+      return dispatch(receieveCommentErrors(errors))
+    });
 };
 
 export const deleteComment = commentId => dispatch => {
-  CommentAPI.deleteComment(commentId)
-    .then(commentId => dispatch(removeComment(commentId)))
-    .catch(errors => dispatch(receieveCommentErrors(errors)));
+  return CommentAPI.deleteComment(commentId)
+    .then(comment => dispatch(removeComment(comment)), errors => {
+      return dispatch(receieveCommentErrors(errors))
+    });
 };

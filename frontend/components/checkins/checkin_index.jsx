@@ -30,6 +30,8 @@ class CheckinsIndex extends React.Component{
                     fetchCheckin={this.props.fetchCheckin}
                     deleteCheckin={this.props.deleteCheckin}
                     currentUserId={this.props.currentUserId}
+                    createComment={this.props.createComment}
+                    deleteComment={this.props.deleteComment}
                />) 
        }).reverse();
         
