@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom'
 import Search from './search'
 import Map from './map'
 import Features from './features'
+import Footer from './footer'
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -36,6 +37,7 @@ class Homepage extends React.Component {
                     <Search className="home-search-container"/>
                     <Map className="home-map-container"/>
                     <Features className="home-features-container"/>
+                    <Footer className = "home-footer-container"/>
                 </div>
 
             </div>

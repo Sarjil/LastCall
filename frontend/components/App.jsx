@@ -17,6 +17,7 @@ import BreweriesBeerContainer from './breweries/breweries_beer_container'
 import BreweryEditContainer from './breweries/edit_brewery_container'
 import AddCheckinContainer from './checkins/add_checkin_container'
 import CheckinShowContainer from './checkins/checkin_show_container'
+import Footer from './homepage/footer'
 
 const App = () =>(
     <div className="protected-routes">
@@ -24,6 +25,7 @@ const App = () =>(
             <AuthRoute path='/signin' component={SignInContainer} />
             <AuthRoute path='/signup' component={SignUpContainer} />
             <AuthRoute exact path='/' component={HomePageContainer} />
+            {/* <AuthRoute exact path='/' component={Footer} /> */}
         </div>
 
         <div className="protected-routes">
@@ -43,7 +45,10 @@ const App = () =>(
                 <ProtectedRoute path='/breweries' component={BreweriesIndexContainer} />   
                 <ProtectedRoute path='/beers' component={BeersIndexContainer} />   
             </Switch>
+            <ProtectedRoute path='/' component={Footer} />
         </div>
+
+       
 
     </div>
 );

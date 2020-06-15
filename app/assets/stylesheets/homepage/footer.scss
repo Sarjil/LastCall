@@ -1,0 +1,26 @@
+.footer-main{
+    background-color: black;
+    height: 80px;
+    width: 100%;
+    justify-content: center;
+}
+
+.footer-div{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 30px;
+}
+
+.a-link{
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.a-link:hover{
+    color: #FFCC00;
+}
+
+body{
+    margin: 0;
+}
