@@ -1,12 +1,9 @@
 .outer-checkin-item {
   display: flex;
-  margin: 20px 10px 20px 10px;
+  margin: 20px 0;
   border-bottom: solid 1px #EEEEEE;
   position: relative;
   word-break: break-word;
-  background-color: white;
-//   width: 50%;
-  justify-content: center;
 }
 
 .checkin-index-title {
@@ -17,8 +14,6 @@
   font-weight: 900;
   font-size: 20px;
   border-bottom: 1px solid #E2E2E2;
-  display: flex;
-  justify-content: space-between;
 }
 
 .upper-checkin-content {
@@ -44,11 +39,12 @@
 .checkin-user-pic {
   height: 52px;
   width: 52px;
+  border-radius: 50%;
 }
 
 .checkin-beer-pic {
-  height: 50px;
-  width: 57px;
+  height: 42px;
+  width: 42px;
   margin-left: 20px;
 }
 
@@ -152,15 +148,10 @@
 }
 
 .checkin-button:hover {
-  background-color: grey;
+  background-color: #858787;
 }
 
-.toasted  {
-  background-color: #FFCC00;
-  color: #ffffff;
-}
-
-.hide-comments{
+.toasted {
   background-color: #FFCC00;
   color: #ffffff;
 }
@@ -171,8 +162,4 @@
 
 .btn-icon {
   padding-right: 5px;
-}
-
-.beer-pic-container{
-    // width: 50%
 }

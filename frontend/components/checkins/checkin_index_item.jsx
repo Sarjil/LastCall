@@ -48,7 +48,6 @@ export default class CheckinsIndexItem extends React.Component{
 
     handleToast(e) {
         e.preventDefault();
-        // debugger
         const checkToasted = this.checkToasted;
         if (this.state.toasted) {
             this.props.deleteToast(this.state.currentUserToastId)
@@ -122,28 +121,40 @@ export default class CheckinsIndexItem extends React.Component{
 
         
         const toasts = this.state.toastIds;
+        const totalComments = this.props.checkin.commentIds; 
+        let totalPeopleComments = totalComments.length > 1 ? "  comments on this checkin" : " comment on this checkin"
+        const peopleComments = totalComments.length === 0 ? null : (
+            <section className = "toasts-index">
+                <div className = "toast-count">
+                    <p className = "toast-item">{totalComments.length}{totalPeopleComments}</p>
+                </div>
+            </section>
 
-        let people = toasts.length > 1 ? " people toasted this checkin" : " person toasted this checkin"
+        ); 
 
+            let people = toasts.length > 1 ? " people toasted this checkin" : " person toasted this checkin"
+        
         const toastsSection = toasts.length === 0 ? null : (
             <section className="toasts-index">
                 <div className="toast-count">
                     <p className="toast-item">{this.state.toastIds.length}{people}</p>
+                    <br/>
                     <i className="fas fa-beer toast-item"></i>
                 </div>
             </section>
         );
 
         const buttonClass = this.state.toasted ? "toasted" : "";
+        const commentClass = this.state.commenting? "hide-comments" : "show-comments"
         const commentText = this.state.commenting ? "Hide Comments" : "Show Comments";
 
         const buttons = (
             <section className="checkin-buttons">
                 
-                <button className="checkin-button comment-btn" onClick={this.handleCommentClick}>
+                <button className={`checkin-button comment-btn ${commentClass}` }onClick={this.handleCommentClick}>
                     <span className="btn-icon">
                         <i className="far fa-comment"></i>
-                    </span>Comment
+                    </span>{commentText}
                 </button>
                 
                 <button className={`checkin-button ${buttonClass}`} onClick={this.handleToast}>
@@ -208,7 +219,9 @@ export default class CheckinsIndexItem extends React.Component{
                                 </p>
 
                                 <p className="checkin-show orange-link">
-                                    <Link to={`/checkins/${checkin.id}`}>View Detailed Check-in</Link>
+                                    {/* // onClick={(this.handleCommentClick).then(() => this.props.history.push(`/checkins/${checkin.id}`))}> View Detailed Checkin  */}
+                                    
+                                    {/* {<Link to={`/checkins/${checkin.id}`}>View Detailed Check-in</Link> } */}
                                 </p>
                                 <div className="checkin-delete">
                                     {deleteable}
@@ -216,6 +229,7 @@ export default class CheckinsIndexItem extends React.Component{
                             </div>
                         </div>
                         {toastsSection}
+                        {peopleComments}
                         <section className={commentsClass}>
                             {commentsSection}
                             {commentForm}

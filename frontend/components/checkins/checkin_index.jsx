@@ -15,7 +15,6 @@ class CheckinsIndex extends React.Component{
     render(){
         if(Object.keys(this.props.checkins).length === 0) return null; 
         const allCheckins = Object.keys(this.props.checkins);
-        // debugger 
 
         const checkinsLis = allCheckins.map(id => {
             const checkin = this.props.checkins[id];

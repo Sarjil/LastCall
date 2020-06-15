@@ -16,6 +16,7 @@ import BeerEditContainer from './beers/beer_edit_container'
 import BreweriesBeerContainer from './breweries/breweries_beer_container'
 import BreweryEditContainer from './breweries/edit_brewery_container'
 import AddCheckinContainer from './checkins/add_checkin_container'
+import CheckinShowContainer from './checkins/checkin_show_container'
 
 const App = () =>(
     <div className="protected-routes">
@@ -38,6 +39,7 @@ const App = () =>(
                 <Route exact path='/breweries/:breweryId/edit' component={BreweryEditContainer} />   
                 <Route exact path='/breweries/:breweryId/beers' component={BreweriesBeerContainer} />   
                 <Route exact path='/beers/:beerId' component={BeersShowContainer} />   
+                <Route exact path='/checkins/:checkinId' component={CheckinShowContainer} />
                 <ProtectedRoute path='/breweries' component={BreweriesIndexContainer} />   
                 <ProtectedRoute path='/beers' component={BeersIndexContainer} />   
             </Switch>

@@ -65,7 +65,7 @@ class AddBeerForm extends React.Component{
                 </label>
 
                 <label className="beer-inputs beer-abv"> ABV
-                    <input type="number" value={this.state.abv} onChange={this.update('abv')} />
+                    <input type="number" step="0.1" min="0" max="100" value={this.state.abv} onChange={this.update('abv')} />
                 </label>
 
                 <label className="beer-inputs beer-style"> Style
