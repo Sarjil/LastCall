@@ -122,6 +122,8 @@ input[type=search]{
 .search-bar-container{
     // display: flex;
     position: relative;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    border-top: 1px solid rgb(212, 212, 212);
 }
 
 .keep-track{

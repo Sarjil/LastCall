@@ -4,12 +4,12 @@ const Search = () =>(
     <div className="search-bar-container">
 
         <div className="homepage-search-bar">
-            <form className="homepage-search-form">
+            {/* <form className="homepage-search-form">
                 <div className="search-icon"> </div>
                 <input type="search"  className="search-bar" placeholder="Search for beers, or breweries"/>
                 <button type="submit" className="search-btn"> SEARCH </button>
                 
-            </form>
+            </form> */}
         </div>
 
         <div className="ratings-badges">

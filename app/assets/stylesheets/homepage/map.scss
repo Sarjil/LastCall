@@ -1,6 +1,8 @@
 .nycmap{
     background: image_url("nyc_map.png");
     padding-top: 60px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    border-top: 1px solid rgb(212, 212, 212);
     // opacity: 10%;
     // background: linear-gradient(rgba(251,251,251,.7), #fbfbfb 80%),url("nyc_map.png");
     // background-image: linear-gradient(rgba(251,251,251,0.7), rgb(251,251,251) 80%), url("nyc_map.png");
