@@ -54,26 +54,26 @@ class AddBeerForm extends React.Component{
                 </div>
                     {/* <ul className={`errors-list ${showError}`}> {showErrors} </ul> */}
                 <label className="beer-inputs beer-name"> Beer Name
-                    <input type="text" value={this.state.name} onChange={this.update('name')} />
+                    <input type="text" value={this.state.name} onChange={this.update('name')} className="input-text" />
                 </label>
 
                 <label className="beer-inputs beer-brewery"> Brewery
-                    <select value={this.state.brewery_id} onChange={this.update('brewery_id')}>
+                    <select value={this.state.brewery_id} onChange={this.update('brewery_id')} >
                     <option value="Please" selected="true" >Please Select A Brewery</option>
                     {allBreweries}    
                     </select> 
                 </label>
 
                 <label className="beer-inputs beer-abv"> ABV
-                    <input type="number" step="0.1" min="0" max="100" value={this.state.abv} onChange={this.update('abv')} />
+                    <input type="number" step="0.1" min="0" max="100" value={this.state.abv} onChange={this.update('abv')} className="input-text"/>
                 </label>
 
                 <label className="beer-inputs beer-style"> Style
-                    <input type="text" value={this.state.style} onChange={this.update('style')} />
+                    <input type="text" value={this.state.style} onChange={this.update('style')} className="input-text"/>
                 </label>
 
                 <label className="beer-inputs beer-descriptions"> Description
-                    <textarea value={this.state.description} onChange={this.update('description')} />
+                    <textarea value={this.state.description} onChange={this.update('description')} className="input-text" />
                 </label>
 
 
